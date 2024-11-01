@@ -1,6 +1,7 @@
 package ec.epn.edu.gr05_1bt3_622_24a.servlets;
 
-import controlador.ResenaJpaController;
+import org.hibernate.Hibernate;
+import persistencia.ResenaJpaController;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -9,6 +10,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import modelo.Resena;
 import modelo.Usuario;
+import service.ResenaService;
+
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
@@ -16,6 +19,7 @@ import java.util.List;
 @WebServlet("/ResenaSv")
 public class ResenaSv extends HttpServlet {
     private final ResenaJpaController resenaController = new ResenaJpaController();
+    private final ResenaService resenaService = new ResenaService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,9 +28,14 @@ public class ResenaSv extends HttpServlet {
 
         // Obtener todas las reseñas
         if (tipoComida == null || tipoComida.isEmpty() || tipoComida.equals("Todas")) {
-            resenas = resenaController.findResenaEntities();
+            resenas = resenaService.obtenerResenas();
         } else {
-            resenas = resenaController.findResenasByTipoComidaWithReactions(tipoComida);
+            resenas = resenaService.obtenerResenasPorTipo(tipoComida);
+        }
+
+        // Inicializar explícitamente la colección `reacciones` de cada `Resena`
+        for (Resena resena : resenas) {
+            Hibernate.initialize(resena.getReacciones());
         }
 
         // Configurar atributos para el JSP
@@ -53,12 +62,7 @@ public class ResenaSv extends HttpServlet {
         String tipoComida = request.getParameter("tipoComida");
         String descripcion = request.getParameter("descripcion");
 
-        Resena resena = new Resena();
-        resena.setRestaurante(restaurante);
-        resena.setTipoComida(tipoComida);
-        resena.setDescripcion(descripcion);
-        resena.setFechaCreacion(new Date());
-        resena.setUsuario(usuario);
+        Resena resena = resenaService.crearResena(restaurante, tipoComida, descripcion, usuario);
 
         resenaController.create(resena);
 

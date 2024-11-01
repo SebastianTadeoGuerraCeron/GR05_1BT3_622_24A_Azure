@@ -1,4 +1,4 @@
-package controlador;
+package persistencia;
 
 import java.io.Serializable;
 import java.util.List;
@@ -11,7 +11,7 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import modelo.Resena;
 import modelo.Usuario;
-import controlador.exceptions.NonexistentEntityException;
+import persistencia.exceptions.NonexistentEntityException;
 
 public class ResenaJpaController implements Serializable {
 

@@ -1,4 +1,4 @@
-package controlador;
+package persistencia;
 
 import java.io.Serializable;
 import java.util.List;
@@ -10,7 +10,7 @@ import jakarta.persistence.Query;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import modelo.Usuario;
-import controlador.exceptions.NonexistentEntityException;
+import persistencia.exceptions.NonexistentEntityException;
 
 public class UsuarioJpaController implements Serializable {
 

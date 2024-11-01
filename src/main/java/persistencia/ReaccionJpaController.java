@@ -1,12 +1,10 @@
-package controlador;
+package persistencia;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import jakarta.persistence.Query;
 import modelo.Reaccion;
-import modelo.Resena;
-import modelo.Usuario;
-import java.util.List;
 
 public class ReaccionJpaController {
 
@@ -15,6 +13,11 @@ public class ReaccionJpaController {
     public ReaccionJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
+
+    public ReaccionJpaController() {
+        emf = Persistence.createEntityManagerFactory("JavaWebLasHuequitas");
+    }
+
 
     private EntityManager getEntityManager() {
         return emf.createEntityManager();

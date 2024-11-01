@@ -1,4 +1,4 @@
-package controlador;
+package persistencia;
 
 import java.io.Serializable;
 import java.util.List;
@@ -12,7 +12,7 @@ import jakarta.persistence.criteria.Root;
 import modelo.Comentario;
 import modelo.Usuario;
 import modelo.Resena;
-import controlador.exceptions.NonexistentEntityException;
+import persistencia.exceptions.NonexistentEntityException;
 
 public class ComentarioJpaController implements Serializable {
 
