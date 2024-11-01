@@ -1,7 +1,7 @@
 package ec.epn.edu.gr05_1bt3_622_24a.servlets;
 
-import controlador.ReaccionJpaController;
-import controlador.ResenaJpaController;
+import persistencia.ReaccionJpaController;
+import persistencia.ResenaJpaController;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.servlet.ServletException;
@@ -13,39 +13,33 @@ import jakarta.servlet.http.HttpSession;
 import modelo.Reaccion;
 import modelo.Resena;
 import modelo.Usuario;
+import service.ReaccionService;
 
 import java.io.IOException;
 
 @WebServlet("/ReaccionSv")
 public class ReaccionSv extends HttpServlet {
-    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("JavaWebLasHuequitas");
-    private final ReaccionJpaController reaccionController = new ReaccionJpaController(emf);
-    private final ResenaJpaController resenaController = new ResenaJpaController(emf);
+    private final ReaccionService reaccionService = new ReaccionService();
+    private final ReaccionJpaController reaccionController = new ReaccionJpaController();
+    private final ResenaJpaController resenaController = new ResenaJpaController();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         Usuario usuario = (Usuario) session.getAttribute("user");
-
         Long resenaId = Long.parseLong(request.getParameter("resenaId"));
-        String tipoReaccion = request.getParameter("tipo"); // Puede ser "like" o "dislike"
+        String tipoReaccion = request.getParameter("tipo"); // "like" o "dislike"
 
         Resena resena = resenaController.findResena(resenaId);
-
-        // Verificar si el usuario ya ha reaccionado a esta reseña
         if (reaccionController.hasUserReactedToResena(usuario.getId(), resenaId)) {
             response.sendRedirect("ResenaSv?showPopup=true&errorMessage=Ya%20has%20reaccionado%20a%20esta%20resena.");
             return;
         }
 
-        // Crear y guardar una nueva reacción
-        Reaccion reaccion = new Reaccion();
-        reaccion.setUsuario(usuario);
-        reaccion.setResena(resena);
-        reaccion.setTipo(tipoReaccion);
+
+        Reaccion reaccion = reaccionService.crearReaccion(usuario, resena, tipoReaccion);
 
         reaccionController.create(reaccion);
-
         response.sendRedirect("ResenaSv?resenaId=" + resenaId);
     }
 
