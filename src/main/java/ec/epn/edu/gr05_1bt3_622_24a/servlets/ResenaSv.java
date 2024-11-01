@@ -1,7 +1,6 @@
 package ec.epn.edu.gr05_1bt3_622_24a.servlets;
 
 import controlador.ResenaJpaController;
-import controlador.UsuarioJpaController;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -16,11 +15,20 @@ import java.util.List;
 
 @WebServlet("/ResenaSv")
 public class ResenaSv extends HttpServlet {
-    private ResenaJpaController resenaController = new ResenaJpaController();
+    private final ResenaJpaController resenaController = new ResenaJpaController();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Resena> resenas = resenaController.findResenaEntities();
+        String tipoComida = request.getParameter("tipoComida");
+        List<Resena> resenas;
+
+        // Obtenemos las reseñas con las reacciones cargadas
+        if (tipoComida == null || tipoComida.isEmpty() || tipoComida.equals("Todas")) {
+            resenas = resenaController.findResenaEntities();
+        } else {
+            resenas = resenaController.findResenasByTipoComidaWithReactions(tipoComida);
+        }
+
         request.setAttribute("resenas", resenas);
         request.getRequestDispatcher("ListaResenas.jsp").forward(request, response);
     }

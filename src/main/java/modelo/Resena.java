@@ -1,6 +1,8 @@
 package modelo;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -30,6 +32,9 @@ public class Resena {
 
     @OneToMany(mappedBy = "resena", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comentario> comentarios;
+
+    @OneToMany(mappedBy = "resena", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Reaccion> reacciones;  // Asociar todas las reacciones a la reseña
 
     // Getters y Setters
     public Long getId() {
@@ -86,5 +91,22 @@ public class Resena {
 
     public void setComentarios(List<Comentario> comentarios) {
         this.comentarios = comentarios;
+    }
+
+    public List<Reaccion> getReacciones() {
+        return reacciones;
+    }
+
+    public void setReacciones(List<Reaccion> reacciones) {
+        this.reacciones = reacciones;
+    }
+
+    // Métodos auxiliares para contar "likes" y "dislikes"
+    public long getLikes() {
+        return reacciones.stream().filter(reaccion -> "like".equals(reaccion.getTipo())).count();
+    }
+
+    public long getDislikes() {
+        return reacciones.stream().filter(reaccion -> "dislike".equals(reaccion.getTipo())).count();
     }
 }

@@ -11,6 +11,7 @@
         <class>modelo.Resena</class>
         <class>modelo.Comentario</class>
         <class>modelo.Usuario</class>
+        <class>modelo.Reaccion</class>
 
         <!-- Configuración de la base de datos -->
         <properties>

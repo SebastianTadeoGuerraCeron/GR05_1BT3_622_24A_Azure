@@ -110,8 +110,15 @@ public class ResenaJpaController implements Serializable {
 
     // Obtener todas las reseñas
     public List<Resena> findResenaEntities() {
-        return findResenaEntities(true, -1, -1);
+        EntityManager em = getEntityManager();
+        try {
+            return em.createQuery("SELECT r FROM Resena r LEFT JOIN FETCH r.reacciones", Resena.class)
+                    .getResultList();
+        } finally {
+            em.close();
+        }
     }
+
 
     // Obtener un rango de reseñas (para paginación)
     public List<Resena> findResenaEntities(int maxResults, int firstResult) {
@@ -158,4 +165,28 @@ public class ResenaJpaController implements Serializable {
             em.close();
         }
     }
+
+    public List<Resena> findResenasByTipoComida(String tipoComida) {
+        EntityManager em = getEntityManager();
+        try {
+            Query query = em.createQuery("SELECT r FROM Resena r WHERE r.tipoComida = :tipoComida", Resena.class);
+            query.setParameter("tipoComida", tipoComida);
+            return query.getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+
+    public List<Resena> findResenasByTipoComidaWithReactions(String tipoComida) {
+        EntityManager em = getEntityManager();
+        try {
+            return em.createQuery("SELECT r FROM Resena r LEFT JOIN FETCH r.reacciones WHERE r.tipoComida = :tipoComida", Resena.class)
+                    .setParameter("tipoComida", tipoComida)
+                    .getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
 }
