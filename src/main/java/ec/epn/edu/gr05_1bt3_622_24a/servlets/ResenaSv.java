@@ -22,16 +22,27 @@ public class ResenaSv extends HttpServlet {
         String tipoComida = request.getParameter("tipoComida");
         List<Resena> resenas;
 
-        // Obtenemos las reseñas con las reacciones cargadas
+        // Obtener todas las reseñas
         if (tipoComida == null || tipoComida.isEmpty() || tipoComida.equals("Todas")) {
             resenas = resenaController.findResenaEntities();
         } else {
             resenas = resenaController.findResenasByTipoComidaWithReactions(tipoComida);
         }
 
+        // Configurar atributos para el JSP
         request.setAttribute("resenas", resenas);
+
+        // Verificar si se debe mostrar el pop-up de error
+        String showPopup = request.getParameter("showPopup");
+        String errorMessage = request.getParameter("errorMessage");
+        if ("true".equals(showPopup)) {
+            request.setAttribute("showPopup", true);
+            request.setAttribute("errorMessage", errorMessage);
+        }
+
         request.getRequestDispatcher("ListaResenas.jsp").forward(request, response);
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Anthony
-  Date: 31/10/2024
-  Time: 14:08
-  To change this template use File | Settings | File Templates.
---%>
+<%-- JSP de Reseñas --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="modelo.Resena" %>
 <%@ page import="java.util.List" %>
@@ -13,6 +7,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Reseñas</title>
+    <script>
+        // Función para mostrar el pop-up de error
+        function showErrorPopup(message) {
+            alert(message); // Se utiliza alert para el pop-up básico; puedes cambiarlo por un modal si deseas.
+        }
+
+        // Ejecutar el pop-up si showPopup está activado
+        window.onload = function () {
+            <%
+                Boolean showPopup = (Boolean) request.getAttribute("showPopup");
+                String errorMessage = (String) request.getAttribute("errorMessage");
+                if (showPopup != null && showPopup) {
+            %>
+            showErrorPopup("<%= errorMessage %>");
+            <% } %>
+        };
+    </script>
 </head>
 <body>
 <h2>Reseñas</h2>
@@ -79,8 +90,3 @@
 </form>
 </body>
 </html>
-
-
-
-
-

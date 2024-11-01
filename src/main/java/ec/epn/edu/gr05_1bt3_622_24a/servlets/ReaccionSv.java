@@ -34,8 +34,7 @@ public class ReaccionSv extends HttpServlet {
 
         // Verificar si el usuario ya ha reaccionado a esta reseña
         if (reaccionController.hasUserReactedToResena(usuario.getId(), resenaId)) {
-            request.setAttribute("errorMessage", "Ya has reaccionado a esta reseña.");
-            request.getRequestDispatcher("ListaResenas.jsp").forward(request, response);
+            response.sendRedirect("ResenaSv?showPopup=true&errorMessage=Ya%20has%20reaccionado%20a%20esta%20resena.");
             return;
         }
 
@@ -49,4 +48,5 @@ public class ReaccionSv extends HttpServlet {
 
         response.sendRedirect("ResenaSv?resenaId=" + resenaId);
     }
+
 }
