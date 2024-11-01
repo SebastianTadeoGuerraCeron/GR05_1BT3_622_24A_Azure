@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Fri Nov 01 00:16:36 UTC 2024:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-0192-e514-c510-000006a850e8 
-on database directory C:\Users\Anthony\Desktop\Sexto Semestree - Software - EPN\Metodologías Ágiles\Intellij_Projects\GR05_1BT3_622_24A\database\LasHuequitasDB with class loader com.intellij.database.remote.jdbc.impl.JdbcClassLoader$JdbcClassLoaderImpl@7e9a5fbe 
-Loaded from file:/C:/Users/Anthony/AppData/Roaming/JetBrains/IntelliJIdea2024.2/jdbc-drivers/Apache%20Derby/10.16.1.1/org/apache/derby/derby/10.16.1.1/derby-10.16.1.1.jar
+Fri Nov 01 16:30:56 UTC 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-0192-e890-cb18-000006b0d838 
+on database directory C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\database\LasHueQuitasDB with class loader com.intellij.database.remote.jdbc.impl.JdbcClassLoader$JdbcClassLoaderImpl@7e9a5fbe 
+Loaded from file:/C:/Users/sebas/AppData/Roaming/JetBrains/IntelliJIdea2024.2/jdbc-drivers/Apache%20Derby/10.16.1.1/org/apache/derby/derby/10.16.1.1/derby-10.16.1.1.jar
 java.vendor=JetBrains s.r.o.
 java.runtime.version=21.0.4+13-b509.17
-user.dir=C:\Users\Anthony\Desktop\Sexto Semestree - Software - EPN\Metodologías Ágiles\Intellij_Projects\GR05_1BT3_622_24A
+user.dir=C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A
 os.name=Windows 11
 os.arch=amd64
 os.version=10.0
