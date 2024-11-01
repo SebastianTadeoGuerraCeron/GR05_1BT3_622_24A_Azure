@@ -51,6 +51,6 @@ public class ResenaSv extends HttpServlet {
 
         resenaController.create(resena);
 
-        response.sendRedirect("ListaResenas.jsp");
+        response.sendRedirect("ResenaSv");
     }
 }
