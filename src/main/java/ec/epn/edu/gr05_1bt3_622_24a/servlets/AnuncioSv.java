@@ -16,8 +16,20 @@ import java.util.List;
 
 @WebServlet("/AnuncioSv")
 public class AnuncioSv extends HttpServlet {
-    private final AnuncioJpaController anuncioController = new AnuncioJpaController();
-    private final AnuncioService anuncioService = new AnuncioService();
+    private final AnuncioJpaController anuncioController;
+    private final AnuncioService anuncioService;
+
+    // Constructor para inyección de dependencias
+    public AnuncioSv(AnuncioJpaController anuncioController, AnuncioService anuncioService) {
+        this.anuncioController = anuncioController;
+        this.anuncioService = anuncioService;
+    }
+
+    // Constructor vacío para despliegue normal
+    public AnuncioSv() {
+        this.anuncioController = new AnuncioJpaController();
+        this.anuncioService = new AnuncioService();
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,7 +51,6 @@ public class AnuncioSv extends HttpServlet {
         request.setAttribute("anuncios", anuncios);
         request.getRequestDispatcher("ListaAnuncio.jsp").forward(request, response);
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
