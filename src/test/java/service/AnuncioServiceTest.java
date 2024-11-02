@@ -2,6 +2,7 @@ package service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import modelo.Usuario;
 import org.junit.jupiter.api.BeforeEach;
@@ -55,6 +56,43 @@ class AnuncioServiceTest {
     }
 
     @Test
+    void givenInvalidDetails_whenCreatingAnuncio_thenAnuncioIsNotCreated() {
+        String nombreRestaurante = null; // Invalid name
+        String tipoComida = ""; // Invalid type
+        String ubicacion = "Centro";
+        String descripcionOfertas = "Descuento del 20%";
+        Usuario usuario = new Usuario(); // Ensure the Usuario class is correctly defined
+
+        Anuncio anuncio = anuncioService.crearAnuncio(nombreRestaurante, tipoComida, ubicacion, descripcionOfertas, usuario);
+
+        assertNotNull(anuncio);
+        assertNull(anuncio.getNombreRestaurante()); // Expecting null due to invalid input
+        assertEquals("", anuncio.getTipoComida()); // Expecting empty string due to invalid input
+        assertEquals(ubicacion, anuncio.getUbicacion());
+        assertEquals(descripcionOfertas, anuncio.getDescripcionOfertas());
+        assertEquals(usuario, anuncio.getUsuario());
+        assertNotNull(anuncio.getFechaPublicacion());
+    }
+
+    @Test
+    void givenAllBlankFields_whenCreatingAnuncio_thenAnuncioIsCreatedWithBlanks() {
+        String nombreRestaurante = " ";
+        String tipoComida = " ";
+        String ubicacion = " ";
+        String descripcionOfertas = " ";
+        Usuario usuario = new Usuario();
+
+        Anuncio anuncio = anuncioService.crearAnuncio(nombreRestaurante, tipoComida, ubicacion, descripcionOfertas, usuario);
+
+        assertEquals(" ", anuncio.getNombreRestaurante());
+        assertEquals(" ", anuncio.getTipoComida());
+        assertEquals(" ", anuncio.getUbicacion());
+        assertEquals(" ", anuncio.getDescripcionOfertas());
+        assertEquals(usuario, anuncio.getUsuario());
+    }
+
+
+    @Test
     void givenAnunciosListAndMatchingName_whenFilteringByNombre_thenReturnsMatchingAnuncios() {
         List<Anuncio> resultado = anuncioService.filtrarAnunciosPorNombre(anuncios, "Restaurante");
 
@@ -83,4 +121,17 @@ class AnuncioServiceTest {
 
         assertEquals(anuncios.size(), resultado.size());
     }
+
+    @Test
+    void givenNombreWithDifferentCase_whenFiltrarAnunciosPorNombre_thenReturnsMatchingAnuncios() {
+        anuncios.get(0).setNombreRestaurante("Poliburguers");
+        anuncios.get(1).setNombreRestaurante("poliburguers");
+
+        List<Anuncio> resultado = anuncioService.filtrarAnunciosPorNombre(anuncios, "POLIBURGUERS");
+
+        assertEquals(2, resultado.size());
+        assertEquals("Poliburguers", resultado.get(0).getNombreRestaurante());
+        assertEquals("poliburguers", resultado.get(1).getNombreRestaurante());
+    }
+
 }
