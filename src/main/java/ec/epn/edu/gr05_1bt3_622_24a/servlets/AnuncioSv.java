@@ -23,11 +23,11 @@ public class AnuncioSv extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String ubicacion = request.getParameter("ubicacion");
         String nombreRestaurante = request.getParameter("nombreRestaurante");
-        List<Anuncio> anuncios;
 
-        // Obtener todos los anuncios
-        anuncios = anuncioService.obtenerAnuncios();
+        // Obtener todos los anuncios directamente desde el controlador
+        List<Anuncio> anuncios = anuncioController.findAnuncioEntities();
 
+        // Aplicar filtros usando AnuncioService si es necesario
         if (ubicacion != null && !ubicacion.isEmpty() && !ubicacion.equals("Todas")) {
             anuncios = anuncioService.filtrarAnunciosPorUbicacion(anuncios, ubicacion);
         }
