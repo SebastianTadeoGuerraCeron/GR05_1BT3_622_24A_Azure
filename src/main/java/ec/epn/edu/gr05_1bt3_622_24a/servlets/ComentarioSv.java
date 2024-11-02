@@ -26,18 +26,25 @@ public class ComentarioSv extends HttpServlet {
     // Maneja solicitudes GET para mostrar comentarios de una reseña
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Verificar si hay un mensaje de error
+        if ("true".equals(request.getParameter("error"))) {
+            request.setAttribute("errorMessage", "El comentario contiene palabras ofensivas y no se ha publicado.");
+        }
+
         Long resenaId = Long.parseLong(request.getParameter("resenaId"));
         Resena resena = resenaController.findResenaConComentarios(resenaId);
         List<Comentario> comentarios = resena.getComentarios();
-        //List<Comentario> comentarios = comentarioController.findComentariosByResena(resenaId);
+
+        // Obtener el mensaje de error si existe en los parámetros de la URL
+        String errorMessage = request.getParameter("errorMessage");
+        if (errorMessage != null && !errorMessage.isEmpty()) {
+            request.setAttribute("errorMessage", errorMessage);
+        }
+
         request.setAttribute("resena", resena);
         request.setAttribute("comentarios", comentarios);
         request.getRequestDispatcher("ListaComentarios.jsp").forward(request, response);
     }
-
-
-
-
 
     // Maneja solicitudes POST para añadir un nuevo comentario
     @Override
@@ -48,10 +55,20 @@ public class ComentarioSv extends HttpServlet {
         Long resenaId = Long.parseLong(request.getParameter("resenaId"));
         String contenido = request.getParameter("contenido");
 
-        Resena resena = resenaController.findResenaConComentarios(resenaId);
-        Comentario comentario = comentarioService.crearComentario(contenido,usuario,resena);
+        // Verificar si el contenido es ofensivo
+        if (comentarioService.verificarContenidoOfensivo(contenido)) {
+            request.setAttribute("errorMessage", "El comentario contiene palabras ofensivas y no se ha publicado.");
+            response.sendRedirect("ComentarioSv?resenaId=" + resenaId + "&error=true");
+            return;
+        }
 
+
+        // Crear y guardar el comentario solo si es válido
+        Resena resena = resenaController.findResenaConComentarios(resenaId);
+        Comentario comentario = comentarioService.crearComentario(contenido, usuario, resena);
         comentarioController.create(comentario);
+
+        // Redirige para evitar reenvío de formulario
         response.sendRedirect("ComentarioSv?resenaId=" + resenaId);
     }
 }

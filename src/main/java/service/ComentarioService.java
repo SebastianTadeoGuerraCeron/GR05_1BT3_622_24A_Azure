@@ -7,7 +7,7 @@ import modelo.Usuario;
 import java.util.Date;
 
 public class ComentarioService {
-
+    private static final ModeradorService moderador = new ModeradorService();
     public Comentario crearComentario(String contenido, Usuario usuario, Resena resena) {
         Comentario comentario = new Comentario();
         comentario.setContenido(contenido);
@@ -16,5 +16,9 @@ public class ComentarioService {
         comentario.setResena(resena);
         resena.getComentarios().add(comentario);
         return comentario;
+    }
+
+    public boolean verificarContenidoOfensivo(String contenido) {
+        return moderador.verificarOfensivo(contenido);
     }
 }
