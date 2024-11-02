@@ -1,16 +1,20 @@
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\modelo\Reaccion.java
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\ec\epn\edu\gr05_1bt3_622_24a\servlets\LogoutSv.java
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\modelo\Comentario.java
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\ec\epn\edu\gr05_1bt3_622_24a\servlets\ReaccionSv.java
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\modelo\Resena.java
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\controlador\ResenaJpaController.java
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\ec\epn\edu\gr05_1bt3_622_24a\servlets\FiltroAutenticacion.java
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\ec\epn\edu\gr05_1bt3_622_24a\servlets\LoginSv.java
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\ec\epn\edu\gr05_1bt3_622_24a\servlets\ComentarioSv.java
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\modelo\Usuario.java
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\controlador\UsuarioJpaController.java
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\ec\epn\edu\gr05_1bt3_622_24a\servlets\ResenaSv.java
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\controlador\exceptions\NonexistentEntityException.java
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\controlador\ComentarioJpaController.java
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\controlador\ReaccionJpaController.java
-D:\6toSemestre\Metodo. Agiles\Proyecto\GR05_1BT3_622_24A\src\main\java\ec\epn\edu\gr05_1bt3_622_24a\servlets\RegistroSv.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\service\ComentarioService.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\modelo\Comentario.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\persistencia\ResenaJpaController.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\ec\epn\edu\gr05_1bt3_622_24a\servlets\LoginSv.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\ec\epn\edu\gr05_1bt3_622_24a\servlets\LogoutSv.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\ec\epn\edu\gr05_1bt3_622_24a\servlets\FiltroAutenticacion.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\service\UsuarioService.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\persistencia\ReaccionJpaController.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\modelo\Reaccion.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\persistencia\UsuarioJpaController.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\ec\epn\edu\gr05_1bt3_622_24a\servlets\ReaccionSv.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\ec\epn\edu\gr05_1bt3_622_24a\servlets\ResenaSv.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\service\ReaccionService.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\ec\epn\edu\gr05_1bt3_622_24a\servlets\RegistroSv.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\ec\epn\edu\gr05_1bt3_622_24a\servlets\ComentarioSv.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\modelo\Resena.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\persistencia\ComentarioJpaController.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\modelo\Usuario.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\persistencia\exceptions\NonexistentEntityException.java
+C:\Users\sebas\OneDrive\Escritorio\GR05_1BT3_622_24A\src\main\java\service\ResenaService.java
