@@ -27,5 +27,8 @@ public class ModeradorService {
         return matcher.find();  // Devuelve true si encuentra una palabra ofensiva
     }
 
+    public boolean esMenorOIgualA200(String contenido) {
+        return contenido.length() <= 200;
+    }
 
 }

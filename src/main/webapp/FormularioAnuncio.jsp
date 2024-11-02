@@ -6,8 +6,16 @@
   <title>Crear Nuevo Anuncio</title>
   <script>
     window.onload = function() {
-      <% if ("true".equals(request.getParameter("error"))) { %>
-      alert("El anuncio contiene palabras ofensivas y no se ha publicado.");
+      // Verificar si existen mensajes de error y mostrarlos como alert
+      <%
+        String errorMessage = (String) request.getAttribute("errorMessage");
+        String errorLengthMessage = (String) request.getAttribute("errorLengthMessage");
+      %>
+      <% if (errorMessage != null) { %>
+      alert("<%= errorMessage %>");
+      <% } %>
+      <% if (errorLengthMessage != null) { %>
+      alert("<%= errorLengthMessage %>");
       <% } %>
     };
   </script>

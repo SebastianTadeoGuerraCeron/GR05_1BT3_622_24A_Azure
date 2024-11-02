@@ -69,6 +69,14 @@ public class AnuncioSv extends HttpServlet {
             return;
         }
 
+        if (!anuncioService.verificarContenidoMax200(nombreRestaurante,descripcionOfertas)) {
+            // Redirigir a la página de formulario con un mensaje de error
+            request.setAttribute("errorLengthMessage", "El anuncio excede los 200 caracteres y no se ha publicado.");
+            request.getRequestDispatcher("FormularioAnuncio.jsp").forward(request, response);
+            return;
+        }
+
+
         // Crear el anuncio usando el servicio, pasando el usuario directamente como en ResenaSv
         Anuncio anuncio = anuncioService.crearAnuncio(nombreRestaurante, tipoComida, ubicacion, descripcionOfertas, usuario);
         // Persistir el anuncio en la base de datos

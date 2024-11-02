@@ -25,6 +25,13 @@ public class AnuncioService {
                 moderador.verificarOfensivo(descripcionOfertas);
     }
 
+
+    public boolean verificarContenidoMax200(String nombreRestaurante, String descripcionOfertas) {
+        return moderador.esMenorOIgualA200(nombreRestaurante) &&
+                moderador.esMenorOIgualA200(descripcionOfertas) ;
+    }
+
+
     // Método para filtrar anuncios por ubicación (recibe una lista de anuncios)
     public List<Anuncio> filtrarAnunciosPorUbicacion(List<Anuncio> todosLosAnuncios, String ubicacion) {
         if (ubicacion == null || ubicacion.equals("Todas")) {
