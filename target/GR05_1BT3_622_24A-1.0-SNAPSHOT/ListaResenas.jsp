@@ -1,4 +1,3 @@
-<%-- JSP de Reseñas --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="modelo.Resena" %>
 <%@ page import="java.util.List" %>
@@ -88,5 +87,11 @@
 <form action="${pageContext.request.contextPath}/FormularioResena.jsp" method="get" style="display: inline;">
     <button type="submit">Crear Nueva Reseña</button>
 </form>
+
+<!-- Botón para regresar a Home -->
+<br><br>
+<a href="${pageContext.request.contextPath}/Home.jsp">
+    <button type="button">Regresar a Home</button>
+</a>
 </body>
 </html>

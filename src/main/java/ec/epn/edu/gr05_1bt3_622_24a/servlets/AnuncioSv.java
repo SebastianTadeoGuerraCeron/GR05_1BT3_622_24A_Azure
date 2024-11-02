@@ -21,20 +21,25 @@ public class AnuncioSv extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String tipoComida = request.getParameter("tipoComida");
+        String ubicacion = request.getParameter("ubicacion");
+        String nombreRestaurante = request.getParameter("nombreRestaurante");
         List<Anuncio> anuncios;
 
         // Obtener todos los anuncios
-        if (tipoComida == null || tipoComida.isEmpty() || tipoComida.equals("Todas")) {
-            anuncios = anuncioService.obtenerAnuncios();
-        } else {
-            anuncios = anuncioService.filtrarAnunciosPorTipoComida(anuncioService.obtenerAnuncios(), tipoComida);
+        anuncios = anuncioService.obtenerAnuncios();
+
+        if (ubicacion != null && !ubicacion.isEmpty() && !ubicacion.equals("Todas")) {
+            anuncios = anuncioService.filtrarAnunciosPorUbicacion(anuncios, ubicacion);
         }
 
-        // Configurar atributos para el JSP
+        if (nombreRestaurante != null && !nombreRestaurante.isEmpty()) {
+            anuncios = anuncioService.filtrarAnunciosPorNombre(anuncios, nombreRestaurante);
+        }
+
         request.setAttribute("anuncios", anuncios);
         request.getRequestDispatcher("ListaAnuncio.jsp").forward(request, response);
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
