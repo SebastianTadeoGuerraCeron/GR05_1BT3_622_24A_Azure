@@ -25,6 +25,9 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comentario> comentarios;
 
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Anuncio> anuncios; // Lista de anuncios asociados al usuario
+
     // Getters y Setters
     public Long getId() {
         return id;
@@ -72,5 +75,13 @@ public class Usuario {
 
     public void setComentarios(List<Comentario> comentarios) {
         this.comentarios = comentarios;
+    }
+
+    public List<Anuncio> getAnuncios() {
+        return anuncios;
+    }
+
+    public void setAnuncios(List<Anuncio> anuncios) {
+        this.anuncios = anuncios;
     }
 }
