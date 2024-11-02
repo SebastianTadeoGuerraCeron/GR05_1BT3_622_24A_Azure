@@ -27,9 +27,9 @@ public class ComentarioSv extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long resenaId = Long.parseLong(request.getParameter("resenaId"));
-        Resena resena = resenaController.findResena(resenaId);
-        List<Comentario> comentarios = comentarioController.findComentariosByResena(resenaId);
-
+        Resena resena = resenaController.findResenaConComentarios(resenaId);
+        List<Comentario> comentarios = resena.getComentarios();
+        //List<Comentario> comentarios = comentarioController.findComentariosByResena(resenaId);
         request.setAttribute("resena", resena);
         request.setAttribute("comentarios", comentarios);
         request.getRequestDispatcher("ListaComentarios.jsp").forward(request, response);
@@ -48,7 +48,7 @@ public class ComentarioSv extends HttpServlet {
         Long resenaId = Long.parseLong(request.getParameter("resenaId"));
         String contenido = request.getParameter("contenido");
 
-        Resena resena = resenaController.findResena(resenaId);
+        Resena resena = resenaController.findResenaConComentarios(resenaId);
         Comentario comentario = comentarioService.crearComentario(contenido,usuario,resena);
 
         comentarioController.create(comentario);
