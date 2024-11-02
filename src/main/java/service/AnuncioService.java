@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class AnuncioService {
-
+    private static final ModeradorService moderador = new ModeradorService();
     // Método para crear un anuncio con los datos proporcionados
     public Anuncio crearAnuncio(String nombreRestaurante, String tipoComida, String ubicacion, String descripcionOfertas, Usuario usuario) {
         Anuncio anuncio = new Anuncio();
@@ -19,6 +19,12 @@ public class AnuncioService {
         anuncio.setFechaPublicacion(new Date());
         anuncio.setUsuario(usuario); // Asignación directa del usuario al anuncio
         return anuncio;
+    }
+    public boolean verificarContenidoOfensivo(String nombreRestaurante, String tipoComida, String ubicacion, String descripcionOfertas) {
+        return moderador.verificarOfensivo(nombreRestaurante) ||
+                moderador.verificarOfensivo(tipoComida) ||
+                moderador.verificarOfensivo(ubicacion) ||
+                moderador.verificarOfensivo(descripcionOfertas);
     }
 
     // Método para filtrar anuncios por ubicación (recibe una lista de anuncios)

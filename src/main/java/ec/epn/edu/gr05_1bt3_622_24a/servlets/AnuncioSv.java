@@ -62,9 +62,15 @@ public class AnuncioSv extends HttpServlet {
         String ubicacion = request.getParameter("ubicacion");
         String descripcionOfertas = request.getParameter("descripcionOfertas");
 
+        // Verificar contenido ofensivo
+        if (anuncioService.verificarContenidoOfensivo(nombreRestaurante, tipoComida, ubicacion, descripcionOfertas)) {
+            // Redirigir a ListaAnuncio.jsp con mensaje de error si el contenido es ofensivo
+            response.sendRedirect("FormularioAnuncio.jsp?error=true");
+            return;
+        }
+
         // Crear el anuncio usando el servicio, pasando el usuario directamente como en ResenaSv
         Anuncio anuncio = anuncioService.crearAnuncio(nombreRestaurante, tipoComida, ubicacion, descripcionOfertas, usuario);
-
         // Persistir el anuncio en la base de datos
         anuncioController.create(anuncio);
 

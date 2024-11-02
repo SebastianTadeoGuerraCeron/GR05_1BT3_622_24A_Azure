@@ -4,6 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Crear Nuevo Anuncio</title>
+  <script>
+    window.onload = function() {
+      <% if ("true".equals(request.getParameter("error"))) { %>
+      alert("El anuncio contiene palabras ofensivas y no se ha publicado.");
+      <% } %>
+    };
+  </script>
   <style>
     /* Importar Google Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
