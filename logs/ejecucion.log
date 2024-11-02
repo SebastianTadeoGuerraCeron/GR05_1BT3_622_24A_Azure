@@ -4,64 +4,64 @@ Using CATALINA_TMPDIR: "C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Meto
 Using JRE_HOME:        "C:\Users\sebas\.jdks\corretto-22.0.2"
 Using CLASSPATH:       "C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodolog�as �giles\apache-tomcat-10.1.31\bin\bootstrap.jar;C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodolog�as �giles\apache-tomcat-10.1.31\bin\tomcat-juli.jar"
 Using CATALINA_OPTS:   ""
-01-Nov-2024 22:48:19.583 ADVERTENCIA [main] org.apache.catalina.startup.ClassLoaderFactory.validateFile Problem with directory [C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\MetodologÃ­as Ãgiles\apache-tomcat-10.1.31\lib], exists: [false], isDirectory: [false], canRead: [false]
-01-Nov-2024 22:48:19.587 ADVERTENCIA [main] org.apache.catalina.startup.ClassLoaderFactory.validateFile Problem with directory [C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\MetodologÃ­as Ãgiles\apache-tomcat-10.1.31\lib], exists: [false], isDirectory: [false], canRead: [false]
-01-Nov-2024 22:48:19.933 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/10.1.31
-01-Nov-2024 22:48:19.933 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Oct 3 2024 19:02:38 UTC
-01-Nov-2024 22:48:19.933 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     10.1.31.0
-01-Nov-2024 22:48:19.933 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
-01-Nov-2024 22:48:19.933 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
-01-Nov-2024 22:48:19.934 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
-01-Nov-2024 22:48:19.934 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\sebas\.jdks\corretto-22.0.2
-01-Nov-2024 22:48:19.934 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       22.0.2+9-FR
-01-Nov-2024 22:48:19.934 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Amazon.com Inc.
-01-Nov-2024 22:48:19.934 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\sebas\AppData\Local\JetBrains\IntelliJIdea2024.2\tomcat\20138f6b-1ae0-4d42-8208-eae41e337b53
-01-Nov-2024 22:48:19.934 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodologías Ágiles\apache-tomcat-10.1.31
-01-Nov-2024 22:48:19.934 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\sebas\AppData\Local\JetBrains\IntelliJIdea2024.2\tomcat\20138f6b-1ae0-4d42-8208-eae41e337b53\conf\logging.properties
-01-Nov-2024 22:48:19.934 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
-01-Nov-2024 22:48:19.934 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcom.sun.management.jmxremote=
-01-Nov-2024 22:48:19.935 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcom.sun.management.jmxremote.port=1099
-01-Nov-2024 22:48:19.935 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcom.sun.management.jmxremote.ssl=false
-01-Nov-2024 22:48:19.935 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcom.sun.management.jmxremote.password.file=C:\Users\sebas\AppData\Local\JetBrains\IntelliJIdea2024.2\tomcat\20138f6b-1ae0-4d42-8208-eae41e337b53\jmxremote.password
-01-Nov-2024 22:48:19.935 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcom.sun.management.jmxremote.access.file=C:\Users\sebas\AppData\Local\JetBrains\IntelliJIdea2024.2\tomcat\20138f6b-1ae0-4d42-8208-eae41e337b53\jmxremote.access
-01-Nov-2024 22:48:19.935 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.rmi.server.hostname=127.0.0.1
-01-Nov-2024 22:48:19.935 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djdk.tls.ephemeralDHKeySize=2048
-01-Nov-2024 22:48:19.935 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
-01-Nov-2024 22:48:19.935 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
-01-Nov-2024 22:48:19.935 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
-01-Nov-2024 22:48:19.936 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
-01-Nov-2024 22:48:19.936 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
-01-Nov-2024 22:48:19.936 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
-01-Nov-2024 22:48:19.936 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\sebas\AppData\Local\JetBrains\IntelliJIdea2024.2\tomcat\20138f6b-1ae0-4d42-8208-eae41e337b53
-01-Nov-2024 22:48:19.936 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodologías Ágiles\apache-tomcat-10.1.31
-01-Nov-2024 22:48:19.936 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodologías Ágiles\apache-tomcat-10.1.31\temp
-01-Nov-2024 22:48:19.946 INFORMACIÓN [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Users\sebas\.jdks\corretto-22.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Adoptium\jdk-17.0.5.8-hotspot\bin;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Users\sebas\AppData\Local\Microsoft\WindowsApps;C:\Users\sebas\AppData\Local\Programs\Microsoft VS Code\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-20\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\sebas\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\sebas\AppData\Local\Programs\Python\Python312\;C:\Users\sebas\AppData\Local\Microsoft\WindowsApps;C:\Users\sebas\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\sebas\.dotnet\tools;C:\Users\sebas\AppData\Local\GitHubDesktop\bin;C:\Users\sebas\AppData\Local\Microsoft\WinGet\Packages\Schniz.fnm_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\sebas\AppData\Roaming\npm;.]
-01-Nov-2024 22:48:20.098 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8082"]
+01-Nov-2024 23:47:19.633 ADVERTENCIA [main] org.apache.catalina.startup.ClassLoaderFactory.validateFile Problem with directory [C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\MetodologÃ­as Ãgiles\apache-tomcat-10.1.31\lib], exists: [false], isDirectory: [false], canRead: [false]
+01-Nov-2024 23:47:19.646 ADVERTENCIA [main] org.apache.catalina.startup.ClassLoaderFactory.validateFile Problem with directory [C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\MetodologÃ­as Ãgiles\apache-tomcat-10.1.31\lib], exists: [false], isDirectory: [false], canRead: [false]
+01-Nov-2024 23:47:20.024 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/10.1.31
+01-Nov-2024 23:47:20.024 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Oct 3 2024 19:02:38 UTC
+01-Nov-2024 23:47:20.024 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     10.1.31.0
+01-Nov-2024 23:47:20.025 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 11
+01-Nov-2024 23:47:20.025 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+01-Nov-2024 23:47:20.025 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+01-Nov-2024 23:47:20.025 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\sebas\.jdks\corretto-22.0.2
+01-Nov-2024 23:47:20.025 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       22.0.2+9-FR
+01-Nov-2024 23:47:20.025 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Amazon.com Inc.
+01-Nov-2024 23:47:20.025 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\sebas\AppData\Local\JetBrains\IntelliJIdea2024.2\tomcat\20138f6b-1ae0-4d42-8208-eae41e337b53
+01-Nov-2024 23:47:20.025 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodologías Ágiles\apache-tomcat-10.1.31
+01-Nov-2024 23:47:20.025 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\sebas\AppData\Local\JetBrains\IntelliJIdea2024.2\tomcat\20138f6b-1ae0-4d42-8208-eae41e337b53\conf\logging.properties
+01-Nov-2024 23:47:20.025 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+01-Nov-2024 23:47:20.026 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcom.sun.management.jmxremote=
+01-Nov-2024 23:47:20.026 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcom.sun.management.jmxremote.port=1099
+01-Nov-2024 23:47:20.026 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcom.sun.management.jmxremote.ssl=false
+01-Nov-2024 23:47:20.026 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcom.sun.management.jmxremote.password.file=C:\Users\sebas\AppData\Local\JetBrains\IntelliJIdea2024.2\tomcat\20138f6b-1ae0-4d42-8208-eae41e337b53\jmxremote.password
+01-Nov-2024 23:47:20.026 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcom.sun.management.jmxremote.access.file=C:\Users\sebas\AppData\Local\JetBrains\IntelliJIdea2024.2\tomcat\20138f6b-1ae0-4d42-8208-eae41e337b53\jmxremote.access
+01-Nov-2024 23:47:20.026 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.rmi.server.hostname=127.0.0.1
+01-Nov-2024 23:47:20.026 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djdk.tls.ephemeralDHKeySize=2048
+01-Nov-2024 23:47:20.026 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+01-Nov-2024 23:47:20.027 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+01-Nov-2024 23:47:20.027 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+01-Nov-2024 23:47:20.027 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+01-Nov-2024 23:47:20.027 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+01-Nov-2024 23:47:20.027 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+01-Nov-2024 23:47:20.027 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\sebas\AppData\Local\JetBrains\IntelliJIdea2024.2\tomcat\20138f6b-1ae0-4d42-8208-eae41e337b53
+01-Nov-2024 23:47:20.027 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodologías Ágiles\apache-tomcat-10.1.31
+01-Nov-2024 23:47:20.027 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodologías Ágiles\apache-tomcat-10.1.31\temp
+01-Nov-2024 23:47:20.038 INFORMACIÓN [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Users\sebas\.jdks\corretto-22.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Adoptium\jdk-17.0.5.8-hotspot\bin;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Users\sebas\AppData\Local\Microsoft\WindowsApps;C:\Users\sebas\AppData\Local\Programs\Microsoft VS Code\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-20\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\sebas\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\sebas\AppData\Local\Programs\Python\Python312\;C:\Users\sebas\AppData\Local\Microsoft\WindowsApps;C:\Users\sebas\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\sebas\.dotnet\tools;C:\Users\sebas\AppData\Local\GitHubDesktop\bin;C:\Users\sebas\AppData\Local\Microsoft\WinGet\Packages\Schniz.fnm_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\sebas\AppData\Roaming\npm;.]
+01-Nov-2024 23:47:20.188 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8082"]
 
-01-Nov-2024 22:48:20.117 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.load Server initialization in [427] milliseconds
-01-Nov-2024 22:48:20.165 INFORMACIÓN [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
-01-Nov-2024 22:48:20.165 INFORMACIÓN [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.31]
-01-Nov-2024 22:48:20.182 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
-01-Nov-2024 22:48:20.240 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.start Server startup in [123] milliseconds
+01-Nov-2024 23:47:20.211 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.load Server initialization in [418] milliseconds
+01-Nov-2024 23:47:20.259 INFORMACIÓN [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+01-Nov-2024 23:47:20.260 INFORMACIÓN [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.31]
+01-Nov-2024 23:47:20.278 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8082"]
+01-Nov-2024 23:47:20.356 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.start Server startup in [142] milliseconds
 Connected to server
-01-Nov-2024 22:48:22.469 INFORMACIÓN [RMI TCP Connection(4)-127.0.0.1] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
-01-Nov-2024 22:48:30.190 INFORMACIÓN [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodologías Ágiles\apache-tomcat-10.1.31\webapps\manager] de la aplicación web
-01-Nov-2024 22:48:30.253 INFORMACIÓN [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodologías Ágiles\apache-tomcat-10.1.31\webapps\manager] has finished in [62] ms
-01-Nov-2024 22:48:49.182 INFO [http-nio-8082-exec-7] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation HHH000204: Processing PersistenceUnitInfo [name: JavaWebLasHuequitas]
-01-Nov-2024 22:48:49.301 INFO [http-nio-8082-exec-7] org.hibernate.Version.logVersion HHH000412: Hibernate ORM core version 6.0.0.Final
-01-Nov-2024 22:48:50.021 WARN [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure HHH10001002: Using built-in connection pool (not intended for production use)
-01-Nov-2024 22:48:50.268 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
-01-Nov-2024 22:48:50.269 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001012: Connecting with JDBC URL [jdbc:derby:./database/LasHueQuitasDB;create=true]
-01-Nov-2024 22:48:50.269 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001001: Connection properties: {password=****, user=user}
-01-Nov-2024 22:48:50.269 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001003: Autocommit mode: false
-01-Nov-2024 22:48:50.275 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init> HHH10001115: Connection pool size: 20 (min=1)
-01-Nov-2024 22:48:50.608 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.logSelectedDialect HHH000400: Using dialect: org.hibernate.dialect.DerbyDialect
-01-Nov-2024 22:48:51.315 INFO [http-nio-8082-exec-7] org.hibernate.validator.internal.util.Version.<clinit> HV000001: Hibernate Validator 8.0.1.Final
-01-Nov-2024 22:48:52.816 INFO [http-nio-8082-exec-7] org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@24b51501] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-01-Nov-2024 22:48:53.373 INFO [http-nio-8082-exec-7] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01-Nov-2024 23:47:22.719 INFORMACIÓN [RMI TCP Connection(4)-127.0.0.1] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+01-Nov-2024 23:47:30.290 INFORMACIÓN [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDirectory Desplegando el directorio [C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodologías Ágiles\apache-tomcat-10.1.31\webapps\manager] de la aplicación web
+01-Nov-2024 23:47:30.354 INFORMACIÓN [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodologías Ágiles\apache-tomcat-10.1.31\webapps\manager] has finished in [64] ms
+01-Nov-2024 23:47:34.359 INFO [http-nio-8082-exec-5] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation HHH000204: Processing PersistenceUnitInfo [name: JavaWebLasHuequitas]
+01-Nov-2024 23:47:34.479 INFO [http-nio-8082-exec-5] org.hibernate.Version.logVersion HHH000412: Hibernate ORM core version 6.0.0.Final
+01-Nov-2024 23:47:35.172 WARN [http-nio-8082-exec-5] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure HHH10001002: Using built-in connection pool (not intended for production use)
+01-Nov-2024 23:47:35.407 INFO [http-nio-8082-exec-5] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
+01-Nov-2024 23:47:35.407 INFO [http-nio-8082-exec-5] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001012: Connecting with JDBC URL [jdbc:derby:./database/LasHueQuitasDB;create=true]
+01-Nov-2024 23:47:35.408 INFO [http-nio-8082-exec-5] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001001: Connection properties: {password=****, user=user}
+01-Nov-2024 23:47:35.408 INFO [http-nio-8082-exec-5] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001003: Autocommit mode: false
+01-Nov-2024 23:47:35.413 INFO [http-nio-8082-exec-5] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init> HHH10001115: Connection pool size: 20 (min=1)
+01-Nov-2024 23:47:35.780 INFO [http-nio-8082-exec-5] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.logSelectedDialect HHH000400: Using dialect: org.hibernate.dialect.DerbyDialect
+01-Nov-2024 23:47:36.516 INFO [http-nio-8082-exec-5] org.hibernate.validator.internal.util.Version.<clinit> HV000001: Hibernate Validator 8.0.1.Final
+01-Nov-2024 23:47:37.949 INFO [http-nio-8082-exec-5] org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6d694254] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+01-Nov-2024 23:47:38.398 INFO [http-nio-8082-exec-5] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 email: admin@admin.com
 password: 1234
-01-Nov-2024 22:48:54.029 WARN [http-nio-8082-exec-7] org.hibernate.jpa.internal.LegacySpecHelper.getValue HHH90000021: Encountered deprecated setting [javax.persistence.lock.timeout], use [jakarta.persistence.lock.timeout] instead
+01-Nov-2024 23:47:39.015 WARN [http-nio-8082-exec-5] org.hibernate.jpa.internal.LegacySpecHelper.getValue HHH90000021: Encountered deprecated setting [javax.persistence.lock.timeout], use [jakarta.persistence.lock.timeout] instead
 Hibernate: 
     select
         u1_0.id,
@@ -72,27 +72,27 @@ Hibernate:
         usuarios u1_0 
     where
         u1_0.email=?
-01-Nov-2024 22:49:37.133 INFO [http-nio-8082-exec-10] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation HHH000204: Processing PersistenceUnitInfo [name: JavaWebLasHuequitas]
-01-Nov-2024 22:49:37.159 WARN [http-nio-8082-exec-10] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure HHH10001002: Using built-in connection pool (not intended for production use)
-01-Nov-2024 22:49:37.159 INFO [http-nio-8082-exec-10] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
-01-Nov-2024 22:49:37.159 INFO [http-nio-8082-exec-10] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001012: Connecting with JDBC URL [jdbc:derby:./database/LasHueQuitasDB;create=true]
-01-Nov-2024 22:49:37.159 INFO [http-nio-8082-exec-10] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001001: Connection properties: {password=****, user=user}
-01-Nov-2024 22:49:37.159 INFO [http-nio-8082-exec-10] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001003: Autocommit mode: false
-01-Nov-2024 22:49:37.159 INFO [http-nio-8082-exec-10] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init> HHH10001115: Connection pool size: 20 (min=1)
-01-Nov-2024 22:49:37.162 INFO [http-nio-8082-exec-10] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.logSelectedDialect HHH000400: Using dialect: org.hibernate.dialect.DerbyDialect
-01-Nov-2024 22:49:37.237 INFO [http-nio-8082-exec-10] org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2a689120] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-01-Nov-2024 22:49:37.268 INFO [http-nio-8082-exec-10] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-01-Nov-2024 22:49:37.272 INFO [http-nio-8082-exec-10] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation HHH000204: Processing PersistenceUnitInfo [name: JavaWebLasHuequitas]
-01-Nov-2024 22:49:37.292 WARN [http-nio-8082-exec-10] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure HHH10001002: Using built-in connection pool (not intended for production use)
-01-Nov-2024 22:49:37.292 INFO [http-nio-8082-exec-10] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
-01-Nov-2024 22:49:37.293 INFO [http-nio-8082-exec-10] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001012: Connecting with JDBC URL [jdbc:derby:./database/LasHueQuitasDB;create=true]
-01-Nov-2024 22:49:37.293 INFO [http-nio-8082-exec-10] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001001: Connection properties: {password=****, user=user}
-01-Nov-2024 22:49:37.293 INFO [http-nio-8082-exec-10] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001003: Autocommit mode: false
-01-Nov-2024 22:49:37.293 INFO [http-nio-8082-exec-10] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init> HHH10001115: Connection pool size: 20 (min=1)
-01-Nov-2024 22:49:37.296 INFO [http-nio-8082-exec-10] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.logSelectedDialect HHH000400: Using dialect: org.hibernate.dialect.DerbyDialect
-01-Nov-2024 22:49:37.365 INFO [http-nio-8082-exec-10] org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@66270a2b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-01-Nov-2024 22:49:37.397 INFO [http-nio-8082-exec-10] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-01-Nov-2024 22:49:37.413 WARN [http-nio-8082-exec-10] org.hibernate.jpa.internal.LegacySpecHelper.getValue HHH90000021: Encountered deprecated setting [javax.persistence.lock.timeout], use [jakarta.persistence.lock.timeout] instead
+01-Nov-2024 23:47:42.809 INFO [http-nio-8082-exec-7] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation HHH000204: Processing PersistenceUnitInfo [name: JavaWebLasHuequitas]
+01-Nov-2024 23:47:42.836 WARN [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure HHH10001002: Using built-in connection pool (not intended for production use)
+01-Nov-2024 23:47:42.837 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
+01-Nov-2024 23:47:42.837 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001012: Connecting with JDBC URL [jdbc:derby:./database/LasHueQuitasDB;create=true]
+01-Nov-2024 23:47:42.837 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001001: Connection properties: {password=****, user=user}
+01-Nov-2024 23:47:42.837 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001003: Autocommit mode: false
+01-Nov-2024 23:47:42.837 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init> HHH10001115: Connection pool size: 20 (min=1)
+01-Nov-2024 23:47:42.839 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.logSelectedDialect HHH000400: Using dialect: org.hibernate.dialect.DerbyDialect
+01-Nov-2024 23:47:42.914 INFO [http-nio-8082-exec-7] org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@771c4fc9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+01-Nov-2024 23:47:42.949 INFO [http-nio-8082-exec-7] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01-Nov-2024 23:47:42.953 INFO [http-nio-8082-exec-7] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation HHH000204: Processing PersistenceUnitInfo [name: JavaWebLasHuequitas]
+01-Nov-2024 23:47:42.970 WARN [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure HHH10001002: Using built-in connection pool (not intended for production use)
+01-Nov-2024 23:47:42.970 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
+01-Nov-2024 23:47:42.971 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001012: Connecting with JDBC URL [jdbc:derby:./database/LasHueQuitasDB;create=true]
+01-Nov-2024 23:47:42.971 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001001: Connection properties: {password=****, user=user}
+01-Nov-2024 23:47:42.971 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001003: Autocommit mode: false
+01-Nov-2024 23:47:42.971 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init> HHH10001115: Connection pool size: 20 (min=1)
+01-Nov-2024 23:47:42.973 INFO [http-nio-8082-exec-7] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.logSelectedDialect HHH000400: Using dialect: org.hibernate.dialect.DerbyDialect
+01-Nov-2024 23:47:43.037 INFO [http-nio-8082-exec-7] org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@23eb2e43] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+01-Nov-2024 23:47:43.069 INFO [http-nio-8082-exec-7] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+01-Nov-2024 23:47:43.082 WARN [http-nio-8082-exec-7] org.hibernate.jpa.internal.LegacySpecHelper.getValue HHH90000021: Encountered deprecated setting [javax.persistence.lock.timeout], use [jakarta.persistence.lock.timeout] instead
 Hibernate: 
     select
         r1_0.id,
@@ -160,57 +160,24 @@ Hibernate:
         usuarios u1_0 
     where
         u1_0.id=?
-01-Nov-2024 22:49:39.836 INFO [http-nio-8082-exec-1] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation HHH000204: Processing PersistenceUnitInfo [name: JavaWebLasHuequitas]
-01-Nov-2024 22:49:39.852 WARN [http-nio-8082-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure HHH10001002: Using built-in connection pool (not intended for production use)
-01-Nov-2024 22:49:39.852 INFO [http-nio-8082-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
-01-Nov-2024 22:49:39.852 INFO [http-nio-8082-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001012: Connecting with JDBC URL [jdbc:derby:./database/LasHueQuitasDB;create=true]
-01-Nov-2024 22:49:39.852 INFO [http-nio-8082-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001001: Connection properties: {password=****, user=user}
-01-Nov-2024 22:49:39.852 INFO [http-nio-8082-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001003: Autocommit mode: false
-01-Nov-2024 22:49:39.852 INFO [http-nio-8082-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init> HHH10001115: Connection pool size: 20 (min=1)
-01-Nov-2024 22:49:39.854 INFO [http-nio-8082-exec-1] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.logSelectedDialect HHH000400: Using dialect: org.hibernate.dialect.DerbyDialect
-01-Nov-2024 22:49:39.911 INFO [http-nio-8082-exec-1] org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@690e52b5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-01-Nov-2024 22:49:39.941 INFO [http-nio-8082-exec-1] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-01-Nov-2024 22:49:39.945 INFO [http-nio-8082-exec-1] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation HHH000204: Processing PersistenceUnitInfo [name: JavaWebLasHuequitas]
-01-Nov-2024 22:49:39.961 WARN [http-nio-8082-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure HHH10001002: Using built-in connection pool (not intended for production use)
-01-Nov-2024 22:49:39.962 INFO [http-nio-8082-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001005: Loaded JDBC driver class: org.apache.derby.jdbc.EmbeddedDriver
-01-Nov-2024 22:49:39.962 INFO [http-nio-8082-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001012: Connecting with JDBC URL [jdbc:derby:./database/LasHueQuitasDB;create=true]
-01-Nov-2024 22:49:39.962 INFO [http-nio-8082-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001001: Connection properties: {password=****, user=user}
-01-Nov-2024 22:49:39.962 INFO [http-nio-8082-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001003: Autocommit mode: false
-01-Nov-2024 22:49:39.962 INFO [http-nio-8082-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init> HHH10001115: Connection pool size: 20 (min=1)
-01-Nov-2024 22:49:39.965 INFO [http-nio-8082-exec-1] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.logSelectedDialect HHH000400: Using dialect: org.hibernate.dialect.DerbyDialect
-01-Nov-2024 22:49:40.025 INFO [http-nio-8082-exec-1] org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@79f10102] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-01-Nov-2024 22:49:40.056 INFO [http-nio-8082-exec-1] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-01-Nov-2024 22:49:40.058 WARN [http-nio-8082-exec-1] org.hibernate.jpa.internal.LegacySpecHelper.getValue HHH90000021: Encountered deprecated setting [javax.persistence.lock.timeout], use [jakarta.persistence.lock.timeout] instead
+01-Nov-2024 23:47:45.197 WARN [http-nio-8082-exec-9] org.hibernate.jpa.internal.LegacySpecHelper.getValue HHH90000021: Encountered deprecated setting [javax.persistence.lock.timeout], use [jakarta.persistence.lock.timeout] instead
 Hibernate: 
     select
-        a1_0.id,
-        a1_0.descripcion_ofertas,
-        a1_0.fecha_publicacion,
-        a1_0.nombre_restaurante,
-        a1_0.tipo_comida,
-        a1_0.ubicacion,
-        a1_0.usuario_id 
+        r1_0.id,
+        r1_0.descripcion,
+        r1_0.fechaCreacion,
+        r2_0.resena_id,
+        r2_0.id,
+        r2_0.tipo,
+        r2_0.usuario_id,
+        r1_0.restaurante,
+        r1_0.tipoComida,
+        r1_0.usuario_id 
     from
-        anuncios a1_0
-Hibernate: 
-    insert 
-    into
-        anuncios
-        (id, descripcion_ofertas, fecha_publicacion, nombre_restaurante, tipo_comida, ubicacion, usuario_id) 
-    values
-        (default, ?, ?, ?, ?, ?, ?)
-01-Nov-2024 22:50:01.007 WARN [http-nio-8082-exec-4] org.hibernate.jpa.internal.LegacySpecHelper.getValue HHH90000021: Encountered deprecated setting [javax.persistence.lock.timeout], use [jakarta.persistence.lock.timeout] instead
-Hibernate: 
-    select
-        a1_0.id,
-        a1_0.descripcion_ofertas,
-        a1_0.fecha_publicacion,
-        a1_0.nombre_restaurante,
-        a1_0.tipo_comida,
-        a1_0.ubicacion,
-        a1_0.usuario_id 
-    from
-        anuncios a1_0
+        resenas r1_0 
+    left join
+        reacciones r2_0 
+            on r1_0.id=r2_0.resena_id
 Hibernate: 
     select
         u1_0.id,
@@ -221,25 +188,85 @@ Hibernate:
         usuarios u1_0 
     where
         u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.passwordHash,
+        u1_0.username 
+    from
+        usuarios u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.passwordHash,
+        u1_0.username 
+    from
+        usuarios u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.passwordHash,
+        u1_0.username 
+    from
+        usuarios u1_0 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.passwordHash,
+        u1_0.username 
+    from
+        usuarios u1_0 
+    where
+        u1_0.id=?
+01-Nov-2024 23:47:48.741 WARN [http-nio-8082-exec-10] org.hibernate.jpa.internal.LegacySpecHelper.getValue HHH90000021: Encountered deprecated setting [javax.persistence.lock.timeout], use [jakarta.persistence.lock.timeout] instead
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.descripcion,
+        r1_0.fechaCreacion,
+        r2_0.resena_id,
+        r2_0.id,
+        r2_0.tipo,
+        r2_0.usuario_id,
+        r1_0.restaurante,
+        r1_0.tipoComida,
+        r1_0.usuario_id 
+    from
+        resenas r1_0 
+    left join
+        reacciones r2_0 
+            on r1_0.id=r2_0.resena_id 
+    where
+        r1_0.tipoComida=?
 Using CATALINA_BASE:   "C:\Users\sebas\AppData\Local\JetBrains\IntelliJIdea2024.2\tomcat\20138f6b-1ae0-4d42-8208-eae41e337b53"
 Using CATALINA_HOME:   "C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodolog�as �giles\apache-tomcat-10.1.31"
 Using CATALINA_TMPDIR: "C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodolog�as �giles\apache-tomcat-10.1.31\temp"
 Using JRE_HOME:        "C:\Users\sebas\.jdks\corretto-22.0.2"
 Using CLASSPATH:       "C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodolog�as �giles\apache-tomcat-10.1.31\bin\bootstrap.jar;C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\Metodolog�as �giles\apache-tomcat-10.1.31\bin\tomcat-juli.jar"
 Using CATALINA_OPTS:   ""
-01-Nov-2024 22:50:29.363 ADVERTENCIA [main] org.apache.catalina.startup.ClassLoaderFactory.validateFile Problem with directory [C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\MetodologÃ­as Ãgiles\apache-tomcat-10.1.31\lib], exists: [false], isDirectory: [false], canRead: [false]
-01-Nov-2024 22:50:29.370 ADVERTENCIA [main] org.apache.catalina.startup.ClassLoaderFactory.validateFile Problem with directory [C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\MetodologÃ­as Ãgiles\apache-tomcat-10.1.31\lib], exists: [false], isDirectory: [false], canRead: [false]
-01-Nov-2024 22:50:29.540 INFORMACIÓN [main] org.apache.catalina.core.StandardServer.await Se ha recibido un comando de apagado a través del puerto de apagado. Parando la instancia del Servidor.
-01-Nov-2024 22:50:29.541 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
-01-Nov-2024 22:50:29.546 INFORMACIÓN [main] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
-01-Nov-2024 22:50:29.550 ADVERTENCIA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [GR05_1BT3_622_24A_war] registró el conductor JDBC [org.apache.derby.jdbc.AutoloadedDriver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
-01-Nov-2024 22:50:29.550 ADVERTENCIA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [GR05_1BT3_622_24A_war] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+01-Nov-2024 23:47:56.126 ADVERTENCIA [main] org.apache.catalina.startup.ClassLoaderFactory.validateFile Problem with directory [C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\MetodologÃ­as Ãgiles\apache-tomcat-10.1.31\lib], exists: [false], isDirectory: [false], canRead: [false]
+01-Nov-2024 23:47:56.133 ADVERTENCIA [main] org.apache.catalina.startup.ClassLoaderFactory.validateFile Problem with directory [C:\Users\sebas\OneDrive\Escritorio\EPN\6to Semestre\MetodologÃ­as Ãgiles\apache-tomcat-10.1.31\lib], exists: [false], isDirectory: [false], canRead: [false]
+01-Nov-2024 23:47:56.302 INFORMACIÓN [main] org.apache.catalina.core.StandardServer.await Se ha recibido un comando de apagado a través del puerto de apagado. Parando la instancia del Servidor.
+01-Nov-2024 23:47:56.303 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8082"]
+01-Nov-2024 23:47:56.309 INFORMACIÓN [main] org.apache.catalina.core.StandardService.stopInternal Parando servicio [Catalina]
+01-Nov-2024 23:47:56.313 ADVERTENCIA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc La aplicación web [GR05_1BT3_622_24A_war] registró el conductor JDBC [org.apache.derby.jdbc.AutoloadedDriver] pero falló al anular el registro mientras la aplicación web estaba parada. Para prevenir un fallo de memoria, se ha anulado el registro del conductor JDBC por la fuerza.
+01-Nov-2024 23:47:56.313 ADVERTENCIA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [GR05_1BT3_622_24A_war] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
  java.base/java.lang.Object.wait0(Native Method)
  java.base/java.lang.Object.wait(Object.java:375)
  java.base/java.lang.Object.wait(Object.java:348)
  java.base/java.util.TimerThread.mainLoop(Timer.java:542)
  java.base/java.util.TimerThread.run(Timer.java:521)
-01-Nov-2024 22:50:29.551 ADVERTENCIA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [GR05_1BT3_622_24A_war] appears to have started a thread named [Hibernate Connection Pool Validation Thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+01-Nov-2024 23:47:56.314 ADVERTENCIA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [GR05_1BT3_622_24A_war] appears to have started a thread named [Hibernate Connection Pool Validation Thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
  java.base/jdk.internal.misc.Unsafe.park(Native Method)
  java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
  java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1758)
@@ -249,7 +276,7 @@ Using CATALINA_OPTS:   ""
  java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
  java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
  java.base/java.lang.Thread.run(Thread.java:1570)
-01-Nov-2024 22:50:29.551 ADVERTENCIA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [GR05_1BT3_622_24A_war] appears to have started a thread named [Hibernate Connection Pool Validation Thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+01-Nov-2024 23:47:56.314 ADVERTENCIA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [GR05_1BT3_622_24A_war] appears to have started a thread named [Hibernate Connection Pool Validation Thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
  java.base/jdk.internal.misc.Unsafe.park(Native Method)
  java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
  java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1758)
@@ -259,7 +286,7 @@ Using CATALINA_OPTS:   ""
  java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
  java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
  java.base/java.lang.Thread.run(Thread.java:1570)
-01-Nov-2024 22:50:29.551 ADVERTENCIA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [GR05_1BT3_622_24A_war] appears to have started a thread named [Hibernate Connection Pool Validation Thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+01-Nov-2024 23:47:56.314 ADVERTENCIA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [GR05_1BT3_622_24A_war] appears to have started a thread named [Hibernate Connection Pool Validation Thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
  java.base/jdk.internal.misc.Unsafe.park(Native Method)
  java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
  java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1758)
@@ -269,32 +296,11 @@ Using CATALINA_OPTS:   ""
  java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
  java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
  java.base/java.lang.Thread.run(Thread.java:1570)
-01-Nov-2024 22:50:29.551 ADVERTENCIA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [GR05_1BT3_622_24A_war] appears to have started a thread named [Hibernate Connection Pool Validation Thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
- java.base/jdk.internal.misc.Unsafe.park(Native Method)
- java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
- java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1758)
- java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
- java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
- java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
- java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
- java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
- java.base/java.lang.Thread.run(Thread.java:1570)
-01-Nov-2024 22:50:29.551 ADVERTENCIA [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [GR05_1BT3_622_24A_war] appears to have started a thread named [Hibernate Connection Pool Validation Thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
- java.base/jdk.internal.misc.Unsafe.park(Native Method)
- java.base/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
- java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1758)
- java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
- java.base/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
- java.base/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1070)
- java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
- java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
- java.base/java.lang.Thread.run(Thread.java:1570)
-01-Nov-2024 22:50:29.552 GRAVE [main] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks La aplicación web [GR05_1BT3_622_24A_war] creó un ThreadLocal con clave del tipo [java.lang.ThreadLocal] (valor [java.lang.ThreadLocal@a307a8c]) y un valor del tipo [org.apache.derby.iapi.services.context.ContextManager] (valor [org.apache.derby.iapi.services.context.ContextManager@6039b64]) pero no pudo quitarlo cuando la aplicación web se paró. Los hilos se van a renovar con el tiempo para intentar evitar in posible fallo de memoria.
-01-Nov-2024 22:50:29.552 GRAVE [main] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks La aplicación web [GR05_1BT3_622_24A_war] creó un ThreadLocal con clave del tipo [java.lang.ThreadLocal] (valor [java.lang.ThreadLocal@a307a8c]) y un valor del tipo [org.apache.derby.iapi.services.context.ContextManager] (valor [org.apache.derby.iapi.services.context.ContextManager@6039b64]) pero no pudo quitarlo cuando la aplicación web se paró. Los hilos se van a renovar con el tiempo para intentar evitar in posible fallo de memoria.
-01-Nov-2024 22:50:29.552 GRAVE [main] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks La aplicación web [GR05_1BT3_622_24A_war] creó un ThreadLocal con clave del tipo [java.lang.ThreadLocal] (valor [java.lang.ThreadLocal@a307a8c]) y un valor del tipo [org.apache.derby.iapi.services.context.ContextManager] (valor [org.apache.derby.iapi.services.context.ContextManager@62b74668]) pero no pudo quitarlo cuando la aplicación web se paró. Los hilos se van a renovar con el tiempo para intentar evitar in posible fallo de memoria.
-01-Nov-2024 22:50:29.552 GRAVE [main] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks La aplicación web [GR05_1BT3_622_24A_war] creó un ThreadLocal con clave del tipo [java.lang.ThreadLocal] (valor [java.lang.ThreadLocal@a307a8c]) y un valor del tipo [org.apache.derby.iapi.services.context.ContextManager] (valor [org.apache.derby.iapi.services.context.ContextManager@7fe6e541]) pero no pudo quitarlo cuando la aplicación web se paró. Los hilos se van a renovar con el tiempo para intentar evitar in posible fallo de memoria.
-01-Nov-2024 22:50:29.553 GRAVE [main] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks La aplicación web [GR05_1BT3_622_24A_war] creó un ThreadLocal con clave del tipo [java.lang.ThreadLocal] (valor [java.lang.ThreadLocal@a307a8c]) y un valor del tipo [org.apache.derby.iapi.services.context.ContextManager] (valor [org.apache.derby.iapi.services.context.ContextManager@22a22615]) pero no pudo quitarlo cuando la aplicación web se paró. Los hilos se van a renovar con el tiempo para intentar evitar in posible fallo de memoria.
-01-Nov-2024 22:50:29.553 GRAVE [main] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks La aplicación web [GR05_1BT3_622_24A_war] creó un ThreadLocal con clave del tipo [java.lang.ThreadLocal] (valor [java.lang.ThreadLocal@a307a8c]) y un valor del tipo [org.apache.derby.iapi.services.context.ContextManager] (valor [org.apache.derby.iapi.services.context.ContextManager@147fa8c9]) pero no pudo quitarlo cuando la aplicación web se paró. Los hilos se van a renovar con el tiempo para intentar evitar in posible fallo de memoria.
-01-Nov-2024 22:50:29.559 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
-01-Nov-2024 22:50:29.573 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
+01-Nov-2024 23:47:56.314 GRAVE [main] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks La aplicación web [GR05_1BT3_622_24A_war] creó un ThreadLocal con clave del tipo [java.lang.ThreadLocal] (valor [java.lang.ThreadLocal@34f6515b]) y un valor del tipo [org.apache.derby.iapi.services.context.ContextManager] (valor [org.apache.derby.iapi.services.context.ContextManager@138d9a9b]) pero no pudo quitarlo cuando la aplicación web se paró. Los hilos se van a renovar con el tiempo para intentar evitar in posible fallo de memoria.
+01-Nov-2024 23:47:56.314 GRAVE [main] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks La aplicación web [GR05_1BT3_622_24A_war] creó un ThreadLocal con clave del tipo [java.lang.ThreadLocal] (valor [java.lang.ThreadLocal@34f6515b]) y un valor del tipo [org.apache.derby.iapi.services.context.ContextManager] (valor [org.apache.derby.iapi.services.context.ContextManager@d4a531b]) pero no pudo quitarlo cuando la aplicación web se paró. Los hilos se van a renovar con el tiempo para intentar evitar in posible fallo de memoria.
+01-Nov-2024 23:47:56.315 GRAVE [main] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks La aplicación web [GR05_1BT3_622_24A_war] creó un ThreadLocal con clave del tipo [java.lang.ThreadLocal] (valor [java.lang.ThreadLocal@34f6515b]) y un valor del tipo [org.apache.derby.iapi.services.context.ContextManager] (valor [org.apache.derby.iapi.services.context.ContextManager@d4a531b]) pero no pudo quitarlo cuando la aplicación web se paró. Los hilos se van a renovar con el tiempo para intentar evitar in posible fallo de memoria.
+01-Nov-2024 23:47:56.315 GRAVE [main] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks La aplicación web [GR05_1BT3_622_24A_war] creó un ThreadLocal con clave del tipo [java.lang.ThreadLocal] (valor [java.lang.ThreadLocal@34f6515b]) y un valor del tipo [org.apache.derby.iapi.services.context.ContextManager] (valor [org.apache.derby.iapi.services.context.ContextManager@d4a531b]) pero no pudo quitarlo cuando la aplicación web se paró. Los hilos se van a renovar con el tiempo para intentar evitar in posible fallo de memoria.
+01-Nov-2024 23:47:56.315 GRAVE [main] org.apache.catalina.loader.WebappClassLoaderBase.checkThreadLocalMapForLeaks La aplicación web [GR05_1BT3_622_24A_war] creó un ThreadLocal con clave del tipo [java.lang.ThreadLocal] (valor [java.lang.ThreadLocal@34f6515b]) y un valor del tipo [org.apache.derby.iapi.services.context.ContextManager] (valor [org.apache.derby.iapi.services.context.ContextManager@49e388cf]) pero no pudo quitarlo cuando la aplicación web se paró. Los hilos se van a renovar con el tiempo para intentar evitar in posible fallo de memoria.
+01-Nov-2024 23:47:56.320 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8082"]
+01-Nov-2024 23:47:56.326 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8082"]
 Disconnected from server

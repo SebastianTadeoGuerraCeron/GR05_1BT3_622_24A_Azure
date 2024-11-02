@@ -1,6 +1,9 @@
 package service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import modelo.Usuario;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import service.AnuncioService;
@@ -26,47 +29,58 @@ class AnuncioServiceTest {
         anuncio2.setNombreRestaurante("Restaurante B");
 
         Anuncio anuncio3 = new Anuncio();
-        anuncio3.setNombreRestaurante("Cafetería Central"); // Cambiado para evitar coincidencia
+        anuncio3.setNombreRestaurante("Cafetería Central");
 
         // Lista de anuncios a utilizar en las pruebas
         anuncios = Arrays.asList(anuncio1, anuncio2, anuncio3);
     }
 
     @Test
-    void testFiltrarAnunciosPorNombre_ConCoincidencia() {
-        // Filtrar anuncios con el nombre "Restaurante"
+    void givenValidDetails_whenCreatingAnuncio_thenAnuncioIsCreatedSuccessfully() {
+        String nombreRestaurante = "Restaurante Ejemplo";
+        String tipoComida = "Italiana";
+        String ubicacion = "Centro";
+        String descripcionOfertas = "Descuento del 20%";
+        Usuario usuario = new Usuario(); // Asegúrate de que la clase Usuario esté correctamente definida
+
+        Anuncio anuncio = anuncioService.crearAnuncio(nombreRestaurante, tipoComida, ubicacion, descripcionOfertas, usuario);
+
+        assertNotNull(anuncio);
+        assertEquals(nombreRestaurante, anuncio.getNombreRestaurante());
+        assertEquals(tipoComida, anuncio.getTipoComida());
+        assertEquals(ubicacion, anuncio.getUbicacion());
+        assertEquals(descripcionOfertas, anuncio.getDescripcionOfertas());
+        assertEquals(usuario, anuncio.getUsuario());
+        assertNotNull(anuncio.getFechaPublicacion());
+    }
+
+    @Test
+    void givenAnunciosListAndMatchingName_whenFilteringByNombre_thenReturnsMatchingAnuncios() {
         List<Anuncio> resultado = anuncioService.filtrarAnunciosPorNombre(anuncios, "Restaurante");
 
-        // Verificar que solo hay dos coincidencias
         assertEquals(2, resultado.size());
         assertEquals("Restaurante A", resultado.get(0).getNombreRestaurante());
         assertEquals("Restaurante B", resultado.get(1).getNombreRestaurante());
     }
 
     @Test
-    void testFiltrarAnunciosPorNombre_SinCoincidencia() {
-        // Filtrar anuncios con un nombre que no existe
+    void givenAnunciosListAndNonExistingName_whenFilteringByNombre_thenReturnsEmptyList() {
         List<Anuncio> resultado = anuncioService.filtrarAnunciosPorNombre(anuncios, "Inexistente");
 
-        // Verificar que no hay coincidencias
         assertEquals(0, resultado.size());
     }
 
     @Test
-    void testFiltrarAnunciosPorNombre_NombreVacio() {
-        // Filtrar anuncios con un nombre vacío
+    void givenAnunciosListAndEmptyName_whenFilteringByNombre_thenReturnsAllAnuncios() {
         List<Anuncio> resultado = anuncioService.filtrarAnunciosPorNombre(anuncios, "");
 
-        // Verificar que se devuelven todos los anuncios
         assertEquals(anuncios.size(), resultado.size());
     }
 
     @Test
-    void testFiltrarAnunciosPorNombre_NombreNull() {
-        // Filtrar anuncios con un nombre nulo
+    void givenAnunciosListAndNullName_whenFilteringByNombre_thenReturnsAllAnuncios() {
         List<Anuncio> resultado = anuncioService.filtrarAnunciosPorNombre(anuncios, null);
 
-        // Verificar que se devuelven todos los anuncios
         assertEquals(anuncios.size(), resultado.size());
     }
 }
