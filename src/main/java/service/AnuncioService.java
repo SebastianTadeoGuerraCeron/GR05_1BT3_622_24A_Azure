@@ -37,4 +37,14 @@ public class AnuncioService {
                 .filter(anuncio -> anuncio.getTipoComida().equalsIgnoreCase(tipoComida))
                 .collect(Collectors.toList());
     }
+
+    public List<Anuncio> filtrarAnunciosPorUbicacion(List<Anuncio> todosLosAnuncios, String ubicacion) {
+        if (ubicacion == null || ubicacion.equals("Todas")) {
+            return todosLosAnuncios;
+        }
+        return todosLosAnuncios.stream()
+                .filter(anuncio -> anuncio.getUbicacion().equalsIgnoreCase(ubicacion))
+                .collect(Collectors.toList());
+    }
+
 }
