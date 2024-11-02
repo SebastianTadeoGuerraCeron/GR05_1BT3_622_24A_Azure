@@ -1,6 +1,6 @@
 package ec.epn.edu.gr05_1bt3_622_24a.servlets;
 
-import org.hibernate.Hibernate;
+
 import persistencia.ResenaJpaController;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -13,7 +13,6 @@ import modelo.Usuario;
 import service.ResenaService;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
 
 @WebServlet("/ResenaSv")
@@ -24,20 +23,18 @@ public class ResenaSv extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String tipoComida = request.getParameter("tipoComida");
-        List<Resena> resenas;
+        List<Resena> resenas ;
+
 
         // Obtener todas las reseñas
         if (tipoComida == null || tipoComida.isEmpty() || tipoComida.equals("Todas")) {
-            resenas = resenaService.obtenerResenas();
+            resenas = resenaController.findResenaEntities();
         } else {
-            resenas = resenaService.obtenerResenasPorTipo(tipoComida);
+            resenas = resenaController.findResenasByTipoComidaWithReactions(tipoComida);
         }
+
 
         // Inicializar explícitamente la colección `reacciones` de cada `Resena`
-        for (Resena resena : resenas) {
-            Hibernate.initialize(resena.getReacciones());
-        }
-
         // Configurar atributos para el JSP
         request.setAttribute("resenas", resenas);
 

@@ -14,7 +14,7 @@ public class ComentarioService {
         comentario.setFechaCreacion(new Date());
         comentario.setUsuario(usuario);
         comentario.setResena(resena);
-        //resena.getComentarios().add(comentario); // Asegura que el comentario se añade a la reseña
+        resena.getComentarios().add(comentario);
         return comentario;
     }
 }

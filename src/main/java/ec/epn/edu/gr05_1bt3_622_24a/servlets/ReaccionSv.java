@@ -31,11 +31,17 @@ public class ReaccionSv extends HttpServlet {
         String tipoReaccion = request.getParameter("tipo"); // "like" o "dislike"
 
         Resena resena = resenaController.findResena(resenaId);
+
+        if (reaccionService.usuarioHaReaccionado(usuario, resena)) {
+            response.sendRedirect("ResenaSv?showPopup=true&errorMessage=Ya%20has%20reaccionado%20a%20esta%20resena.");
+            return;
+        }
+        /*
         if (reaccionController.hasUserReactedToResena(usuario.getId(), resenaId)) {
             response.sendRedirect("ResenaSv?showPopup=true&errorMessage=Ya%20has%20reaccionado%20a%20esta%20resena.");
             return;
         }
-
+        */
 
         Reaccion reaccion = reaccionService.crearReaccion(usuario, resena, tipoReaccion);
 

@@ -189,4 +189,15 @@ public class ResenaJpaController implements Serializable {
         }
     }
 
+    public Resena findResenaConComentarios(Long id) {
+        EntityManager em = getEntityManager();
+        try {
+            // Consulta que carga la reseña con los comentarios para inicializar la colección
+            Query query = em.createQuery("SELECT r FROM Resena r LEFT JOIN FETCH r.comentarios WHERE r.id = :id");
+            query.setParameter("id", id);
+            return (Resena) query.getSingleResult();
+        } finally {
+            em.close();
+        }
+    }
 }
