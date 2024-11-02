@@ -21,8 +21,9 @@ public class AnuncioService {
         return anuncio;
     }
     public boolean verificarContenidoOfensivo(String nombreRestaurante, String descripcionOfertas) {
-        return moderador.verificarOfensivo(nombreRestaurante) ||
-                moderador.verificarOfensivo(descripcionOfertas);
+        boolean nombreRestauranteOfensivo = moderador.verificarOfensivo(nombreRestaurante);
+        boolean descripcionOfertasOfensivo = moderador.verificarOfensivo(descripcionOfertas);
+        return nombreRestauranteOfensivo || descripcionOfertasOfensivo;
     }
 
 

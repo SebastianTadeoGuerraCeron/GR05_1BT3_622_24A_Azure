@@ -16,15 +16,20 @@ public class ModeradorService {
 
     static {
         String pattern = String.join("|", PALABRAS_OFENSIVAS);
-        PATRON_OFENSIVO = Pattern.compile("\\b(" + pattern + ")\\b", Pattern.CASE_INSENSITIVE);
+        //PATRON_OFENSIVO = Pattern.compile("\\b(" + pattern + ")\\b", Pattern.CASE_INSENSITIVE);
+        PATRON_OFENSIVO = Pattern.compile("\\b(" + pattern + ")\\b|[^a-zA-Z0-9](" + pattern + ")[^a-zA-Z0-9]", Pattern.CASE_INSENSITIVE);
+
     }
 
     public boolean verificarOfensivo(String contenido) {
         if (contenido == null || contenido.isEmpty()) {
             return false;
         }
+
         Matcher matcher = PATRON_OFENSIVO.matcher(contenido);
-        return matcher.find();  // Devuelve true si encuentra una palabra ofensiva
+        boolean resultado = matcher.find();
+        System.out.println("Verificación de contenido ofensivo para: " + contenido + " Resultado: " + resultado);
+        return resultado;
     }
 
     public boolean esMenorOIgualA200(String contenido) {
