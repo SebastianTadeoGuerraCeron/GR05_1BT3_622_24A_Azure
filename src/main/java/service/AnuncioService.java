@@ -29,15 +29,7 @@ public class AnuncioService {
         return anuncioController.findAnuncioEntities();
     }
 
-    public List<Anuncio> filtrarAnunciosPorTipoComida(List<Anuncio> todosLosAnuncios, String tipoComida) {
-        if (tipoComida == null || tipoComida.equals("Todas")) {
-            return todosLosAnuncios;
-        }
-        return todosLosAnuncios.stream()
-                .filter(anuncio -> anuncio.getTipoComida().equalsIgnoreCase(tipoComida))
-                .collect(Collectors.toList());
-    }
-
+    
     public List<Anuncio> filtrarAnunciosPorUbicacion(List<Anuncio> todosLosAnuncios, String ubicacion) {
         if (ubicacion == null || ubicacion.equals("Todas")) {
             return todosLosAnuncios;
@@ -46,5 +38,15 @@ public class AnuncioService {
                 .filter(anuncio -> anuncio.getUbicacion().equalsIgnoreCase(ubicacion))
                 .collect(Collectors.toList());
     }
+
+    public List<Anuncio> filtrarAnunciosPorNombre(List<Anuncio> todosLosAnuncios, String nombreRestaurante) {
+        if (nombreRestaurante == null || nombreRestaurante.trim().isEmpty()) {
+            return todosLosAnuncios;
+        }
+        return todosLosAnuncios.stream()
+                .filter(anuncio -> anuncio.getNombreRestaurante().toLowerCase().contains(nombreRestaurante.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+
 
 }
