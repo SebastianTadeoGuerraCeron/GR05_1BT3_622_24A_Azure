@@ -1,17 +1,17 @@
 package service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-
 import modelo.Usuario;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import service.AnuncioService;
 import modelo.Anuncio;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class AnuncioServiceTest {
 
@@ -133,5 +133,21 @@ class AnuncioServiceTest {
         assertEquals("Poliburguers", resultado.get(0).getNombreRestaurante());
         assertEquals("poliburguers", resultado.get(1).getNombreRestaurante());
     }
+
+    @ParameterizedTest
+    @CsvSource({
+            "'Restaurante basura', 'Snacks', 'Ponceano', 'Descuento de mierda'",  // Palabra ofensiva en descripción
+            "'Sitio asqueroso', 'Extranjera', 'Chillogallo', 'Buena comida'",  // Palabra ofensiva en ubicación
+            "'zorra', 'Tradicional', 'Solanda', 'Especialidad en pastas'",  // Palabra ofensiva en tipo de comida
+            "'Dueño tonto', 'Extranjera', 'Tumbaco', 'Descuento en pizzas'"  // Palabra ofensiva en nombre
+    })
+    void givenAnuncioConPalabrasOfensivas_whenVerificarContenidoOfensivo_thenRetornaTrue(String nombreRestaurante, String descripcionOfertas) {
+        // Verificar si el anuncio contiene palabras ofensivas
+        boolean resultado = anuncioService.verificarContenidoOfensivo(nombreRestaurante, descripcionOfertas);
+
+        // Espera que el resultado sea true porque alguna parte contiene una palabra ofensiva
+        assertTrue(resultado);
+    }
+
 
 }

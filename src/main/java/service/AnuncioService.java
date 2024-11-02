@@ -20,10 +20,8 @@ public class AnuncioService {
         anuncio.setUsuario(usuario); // Asignación directa del usuario al anuncio
         return anuncio;
     }
-    public boolean verificarContenidoOfensivo(String nombreRestaurante, String tipoComida, String ubicacion, String descripcionOfertas) {
+    public boolean verificarContenidoOfensivo(String nombreRestaurante, String descripcionOfertas) {
         return moderador.verificarOfensivo(nombreRestaurante) ||
-                moderador.verificarOfensivo(tipoComida) ||
-                moderador.verificarOfensivo(ubicacion) ||
                 moderador.verificarOfensivo(descripcionOfertas);
     }
 

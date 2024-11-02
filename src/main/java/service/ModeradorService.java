@@ -9,7 +9,7 @@ public class ModeradorService {
             "adefecioso", "malo", "estúpido", "zopenco", "patán", "cretino", "baboso", "loco", "menso", "cobarde",
             "holgazán", "gusano", "mocoso", "caradura", "bruto", "mugroso", "animal", "cerdo",
             "vago", "chismoso", "hipócrita", "mentiroso", "rata", "traidor", "insolente",
-            "ignorante", "payaso", "sucio", "maleducado", "necio", "desgraciado", "bastardo"
+            "ignorante", "payaso", "sucio", "maleducado", "necio", "desgraciado", "bastardo", "basura"
     };
 
     private static final Pattern PATRON_OFENSIVO;

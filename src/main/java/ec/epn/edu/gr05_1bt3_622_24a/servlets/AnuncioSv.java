@@ -62,10 +62,10 @@ public class AnuncioSv extends HttpServlet {
         String ubicacion = request.getParameter("ubicacion");
         String descripcionOfertas = request.getParameter("descripcionOfertas");
 
-        // Verificar contenido ofensivo
-        if (anuncioService.verificarContenidoOfensivo(nombreRestaurante, tipoComida, ubicacion, descripcionOfertas)) {
-            // Redirigir a ListaAnuncio.jsp con mensaje de error si el contenido es ofensivo
-            response.sendRedirect("FormularioAnuncio.jsp?error=true");
+        if (anuncioService.verificarContenidoOfensivo(nombreRestaurante,descripcionOfertas)) {
+            // Redirigir a la página de formulario con un mensaje de error
+            request.setAttribute("errorMessage", "El anuncio contiene palabras ofensivas y no se ha publicado.");
+            request.getRequestDispatcher("FormularioAnuncio.jsp").forward(request, response);
             return;
         }
 
