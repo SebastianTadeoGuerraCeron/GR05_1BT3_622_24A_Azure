@@ -3,7 +3,7 @@ package ec.epn.edu.gr05_1bt3_622_24a.servlets;
 import modelo.Anuncio;
 import modelo.Usuario;
 //import service.AnuncioService;
-//import persistencia.AnuncioJpaController;
+import persistencia.AnuncioJpaController;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -17,6 +17,17 @@ import java.util.List;
 @WebServlet("/AnuncioSv")
 public class AnuncioSv extends HttpServlet {
     private final AnuncioJpaController anuncioController;
+
+    public AnuncioSv(AnuncioJpaController anuncioController) {
+        this.anuncioController = anuncioController;
+    }
+
+    // Constructor vacío para despliegue normal
+    public AnuncioSv() {
+        this.anuncioController = new AnuncioJpaController();
+//        this.anuncioService = new AnuncioService();
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String ubicacion = request.getParameter("ubicacion");
