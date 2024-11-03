@@ -31,21 +31,23 @@ public class AnuncioService {
                 .collect(Collectors.toList());
     }
 
-
-
     private boolean esUbicacionInvalida(String ubicacion) {
         return ubicacion == null || ubicacion.equals("Todas");
     }
 
-    // Método para filtrar anuncios por nombre del restaurante (recibe una lista de anuncios)
     public List<Anuncio> filtrarAnunciosPorNombre(List<Anuncio> todosLosAnuncios, String nombreRestaurante) {
-        if (nombreRestaurante == null || nombreRestaurante.trim().isEmpty()) {
+        if (esNombreInvalido(nombreRestaurante)) {
             return todosLosAnuncios;
         }
         return todosLosAnuncios.stream()
                 .filter(anuncio -> anuncio.getNombreRestaurante().toLowerCase().contains(nombreRestaurante.toLowerCase()))
                 .collect(Collectors.toList());
     }
+
+    private boolean esNombreInvalido(String nombreRestaurante) {
+        return nombreRestaurante == null || nombreRestaurante.trim().isEmpty();
+    }
+
 
     public boolean verificarContenidoOfensivo(String nombreRestaurante, String descripcionOfertas) {
         return esOfensivo(nombreRestaurante) || esOfensivo(descripcionOfertas);
