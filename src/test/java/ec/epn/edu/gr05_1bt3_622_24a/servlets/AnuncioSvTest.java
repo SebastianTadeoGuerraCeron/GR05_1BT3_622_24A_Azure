@@ -93,10 +93,18 @@ class AnuncioSvTest {
         when(request.getParameter("ubicacion")).thenReturn("Centro");
         when(request.getParameter("descripcionOfertas")).thenReturn("Descuento del 20%");
 
+        // Mockear validaciones para que devuelvan false, permitiendo la creación del anuncio
+        when(anuncioService.verificarContenidoOfensivo("Restaurante Ejemplo", "Descuento del 20%")).thenReturn(false);
+        when(anuncioService.verificarContenidoMax200("Restaurante Ejemplo", "Descuento del 20%")).thenReturn(true);
+
         // Mockear el anuncio creado por el servicio
         Anuncio mockAnuncio = new Anuncio();
         when(anuncioService.crearAnuncio("Restaurante Ejemplo", "Italiana", "Centro", "Descuento del 20%", mockUsuario))
                 .thenReturn(mockAnuncio);
+
+        // Mock del RequestDispatcher para forward a "FormularioAnuncio.jsp"
+        RequestDispatcher dispatcher = mock(RequestDispatcher.class);
+        when(request.getRequestDispatcher("FormularioAnuncio.jsp")).thenReturn(dispatcher);
 
         // Ejecutar el método doPost
         anuncioSv.doPost(request, response);
