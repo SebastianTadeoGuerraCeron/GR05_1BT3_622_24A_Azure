@@ -2,12 +2,18 @@ package service;
 
 import modelo.Anuncio;
 import modelo.Usuario;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class AnuncioServiceTest {
     private AnuncioService anuncioService;
+
+    @BeforeEach
+    void setUp() {
+        anuncioService = new AnuncioService();
+    }
 
     @Test
     void given_ValidDetails_when_CreatingAnuncio_then_AnuncioIsCreatedSuccessfully() {

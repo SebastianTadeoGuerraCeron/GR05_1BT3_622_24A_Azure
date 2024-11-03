@@ -1,6 +1,8 @@
 package modelo;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,7 +25,10 @@ public class Usuario {
     private List<Resena> resenas;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Comentario> comentarios;
+    private List<Comentario> comentarios = new ArrayList<>(); // Lista de comentarios asociados al usuario
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Anuncio> anuncios; // Lista de anuncios asociados al usuario
 
     // Getters y Setters
     public Long getId() {
@@ -72,5 +77,13 @@ public class Usuario {
 
     public void setComentarios(List<Comentario> comentarios) {
         this.comentarios = comentarios;
+    }
+
+    public List<Anuncio> getAnuncios() {
+        return anuncios;
+    }
+
+    public void setAnuncios(List<Anuncio> anuncios) {
+        this.anuncios = anuncios;
     }
 }
