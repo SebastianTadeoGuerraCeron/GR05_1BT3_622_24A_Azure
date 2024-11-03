@@ -12,7 +12,9 @@ public class ModeradorService {
             "ignorante", "payaso", "sucio", "maleducado", "necio", "desgraciado", "bastardo", "basura"
     };
 
+
     private static final Pattern PATRON_OFENSIVO;
+    private static final Pattern PATRON_CARACTERES_ESPECIALES = Pattern.compile("[^a-zA-Z0-9\\s&?!']");
 
     static {
         String pattern = String.join("|", PALABRAS_OFENSIVAS);
@@ -33,7 +35,16 @@ public class ModeradorService {
     }
 
     public boolean esMenorOIgualA200(String contenido) {
+
         return contenido.length() <= 200;
+    }
+
+    public boolean verificarCaracteresEspeciales(String contenido) {
+        if (contenido == null || contenido.isEmpty()) {
+            return false;
+        }
+        Matcher matcher = PATRON_CARACTERES_ESPECIALES.matcher(contenido);
+        return matcher.find(); // Retorna true si encuentra caracteres especiales
     }
 
 }

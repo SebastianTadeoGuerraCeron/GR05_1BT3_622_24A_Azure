@@ -55,6 +55,10 @@ public class AnuncioService {
         return moderador.verificarOfensivo(texto);
     }
 
+    public boolean verificarContenidoCaracteresEspeciales(String nombreRestaurante) {
+        boolean nombreRestauranteCaracteresEspeciales = moderador.verificarCaracteresEspeciales(nombreRestaurante);
+        return nombreRestauranteCaracteresEspeciales;
+    }
 
     public boolean verificarContenidoMax200(String nombreRestaurante, String descripcionOfertas) {
         return esTextoValido(nombreRestaurante) && esTextoValido(descripcionOfertas);
