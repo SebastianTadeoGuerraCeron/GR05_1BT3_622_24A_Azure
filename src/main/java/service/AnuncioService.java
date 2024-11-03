@@ -24,7 +24,12 @@ public class AnuncioService {
 
     // Método para filtrar anuncios por ubicación (recibe una lista de anuncios)
     public List<Anuncio> filtrarAnunciosPorUbicacion(List<Anuncio> todosLosAnuncios, String ubicacion) {
-        return null;
+        if (ubicacion == null || ubicacion.equals("Todas")) {
+            return todosLosAnuncios;
+        }
+        return todosLosAnuncios.stream()
+                .filter(anuncio -> anuncio.getUbicacion().equalsIgnoreCase(ubicacion))
+                .collect(Collectors.toList());
     }
 
     // Método para filtrar anuncios por nombre del restaurante (recibe una lista de anuncios)
