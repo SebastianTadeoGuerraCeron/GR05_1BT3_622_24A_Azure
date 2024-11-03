@@ -26,6 +26,11 @@ public class AnuncioService {
         return nombreRestauranteOfensivo || descripcionOfertasOfensivo;
     }
 
+    public boolean verificarContenidoCaracteresEspeciales(String nombreRestaurante) {
+        boolean nombreRestauranteCaracteresEspeciales = moderador.verificarCaracteresEspeciales(nombreRestaurante);
+        return nombreRestauranteCaracteresEspeciales;
+    }
+
 
     public boolean verificarContenidoMax200(String nombreRestaurante, String descripcionOfertas) {
         return moderador.esMenorOIgualA200(nombreRestaurante) &&

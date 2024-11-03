@@ -6,6 +6,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista de Anuncios</title>
+    <script>
+        window.onload = function() {
+            // Verificar si existen mensajes de error y mostrarlos como alert
+            <%
+              String errorSpecialCharacterMessage = (String) request.getAttribute("errorSpecialCharacterMessage");
+            %>
+            <% if (errorSpecialCharacterMessage != null) { %>
+            alert("<%= errorSpecialCharacterMessage %>");
+            <% } %>
+        };
+    </script>
     <style>
         /* Importar Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');

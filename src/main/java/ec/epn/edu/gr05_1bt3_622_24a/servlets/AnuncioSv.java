@@ -44,8 +44,15 @@ public class AnuncioSv extends HttpServlet {
             anuncios = anuncioService.filtrarAnunciosPorUbicacion(anuncios, ubicacion);
         }
 
+
         if (nombreRestaurante != null && !nombreRestaurante.isEmpty()) {
-            anuncios = anuncioService.filtrarAnunciosPorNombre(anuncios, nombreRestaurante);
+            // Verificar caracteres especiales
+            if (anuncioService.verificarContenidoCaracteresEspeciales(nombreRestaurante)) {
+                request.setAttribute("errorSpecialCharacterMessage", "El nombre del restaurante contiene caracteres especiales y no se ha publicado.");
+            } else {
+                // Si no hay caracteres especiales, filtrar anuncios por nombre
+                anuncios = anuncioService.filtrarAnunciosPorNombre(anuncios, nombreRestaurante);
+            }
         }
 
         request.setAttribute("anuncios", anuncios);
