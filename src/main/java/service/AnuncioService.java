@@ -23,15 +23,20 @@ public class AnuncioService {
     }
 
     public boolean verificarContenidoOfensivo(String nombreRestaurante, String descripcionOfertas) {
-        boolean nombreRestauranteOfensivo = moderador.verificarOfensivo(nombreRestaurante);
-        boolean descripcionOfertasOfensivo = moderador.verificarOfensivo(descripcionOfertas);
-        return nombreRestauranteOfensivo || descripcionOfertasOfensivo;
+        return esOfensivo(nombreRestaurante) || esOfensivo(descripcionOfertas);
+    }
+
+    private boolean esOfensivo(String texto) {
+        return moderador.verificarOfensivo(texto);
     }
 
 
     public boolean verificarContenidoMax200(String nombreRestaurante, String descripcionOfertas) {
-        return moderador.esMenorOIgualA200(nombreRestaurante) &&
-                moderador.esMenorOIgualA200(descripcionOfertas) ;
+        return esTextoValido(nombreRestaurante) && esTextoValido(descripcionOfertas);
+    }
+
+    private boolean esTextoValido(String texto) {
+        return moderador.esMenorOIgualA200(texto);
     }
 
 }
