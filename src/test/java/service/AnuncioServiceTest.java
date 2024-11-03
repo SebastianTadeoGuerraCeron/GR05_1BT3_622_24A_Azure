@@ -15,10 +15,24 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AnuncioServiceTest {
     private AnuncioService anuncioService;
+    private List<Anuncio> anuncios;
 
     @BeforeEach
     void setUp() {
         anuncioService = new AnuncioService();
+
+        // Crear algunos anuncios de ejemplo
+        Anuncio anuncio1 = new Anuncio();
+        anuncio1.setNombreRestaurante("Restaurante A");
+
+        Anuncio anuncio2 = new Anuncio();
+        anuncio2.setNombreRestaurante("Restaurante B");
+
+        Anuncio anuncio3 = new Anuncio();
+        anuncio3.setNombreRestaurante("Cafetería Central");
+
+        // Lista de anuncios a utilizar en las pruebas
+        anuncios = Arrays.asList(anuncio1, anuncio2, anuncio3);
     }
 
     @Test
@@ -87,5 +101,47 @@ class AnuncioServiceTest {
             System.out.println("resultado test con mas de 200 caracteres");
             assertFalse(resultado);
         }
+    }
+
+    @Test
+    void given_AnunciosListAndMatchingName_when_FilteringByNombre_then_ReturnsMatchingAnuncios() {
+        List<Anuncio> resultado = anuncioService.filtrarAnunciosPorNombre(anuncios, "Restaurante");
+
+        assertEquals(2, resultado.size());
+        assertEquals("Restaurante A", resultado.get(0).getNombreRestaurante());
+        assertEquals("Restaurante B", resultado.get(1).getNombreRestaurante());
+    }
+
+    @Test
+    void given_AnunciosListAndNonExistingName_when_FilteringByNombre_then_ReturnsEmptyList() {
+        List<Anuncio> resultado = anuncioService.filtrarAnunciosPorNombre(anuncios, "Inexistente");
+
+        assertEquals(0, resultado.size());
+    }
+
+    @Test
+    void given_AnunciosListAndEmptyName_when_FilteringByNombre_then_ReturnsAllAnuncios() {
+        List<Anuncio> resultado = anuncioService.filtrarAnunciosPorNombre(anuncios, "");
+
+        assertEquals(anuncios.size(), resultado.size());
+    }
+
+    @Test
+    void given_AnunciosListAndNullName_when_FilteringByNombre_then_ReturnsAllAnuncios() {
+        List<Anuncio> resultado = anuncioService.filtrarAnunciosPorNombre(anuncios, null);
+
+        assertEquals(anuncios.size(), resultado.size());
+    }
+
+    @Test
+    void given_NombreWithDifferentCase_when_FiltrarAnunciosPorNombre_then_ReturnsMatchingAnuncios() {
+        anuncios.get(0).setNombreRestaurante("Poliburguers");
+        anuncios.get(1).setNombreRestaurante("poliburguers");
+
+        List<Anuncio> resultado = anuncioService.filtrarAnunciosPorNombre(anuncios, "POLIBURGUERS");
+
+        assertEquals(2, resultado.size());
+        assertEquals("Poliburguers", resultado.get(0).getNombreRestaurante());
+        assertEquals("poliburguers", resultado.get(1).getNombreRestaurante());
     }
 }

@@ -22,6 +22,16 @@ public class AnuncioService {
         return anuncio;
     }
 
+    // Método para filtrar anuncios por ubicación (recibe una lista de anuncios)
+    public List<Anuncio> filtrarAnunciosPorUbicacion(List<Anuncio> todosLosAnuncios, String ubicacion) {
+        return null;
+    }
+
+    // Método para filtrar anuncios por nombre del restaurante (recibe una lista de anuncios)
+    public List<Anuncio> filtrarAnunciosPorNombre(List<Anuncio> todosLosAnuncios, String nombreRestaurante) {
+        return null;
+    }
+
     public boolean verificarContenidoOfensivo(String nombreRestaurante, String descripcionOfertas) {
         return esOfensivo(nombreRestaurante) || esOfensivo(descripcionOfertas);
     }
