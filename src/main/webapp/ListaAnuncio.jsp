@@ -8,10 +8,15 @@
   <title>Lista de Anuncios</title>
   <script>
     window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+
+      // Mostrar mensaje de éxito si anuncioSuccess=true
+      if (urlParams.get('anuncioSuccess') === 'true') {
+        alert('¡Anuncio publicado exitosamente!');
+      }
+
       // Verificar si existen mensajes de error y mostrarlos como alert
-      <%
-        String errorSpecialCharacterMessage = (String) request.getAttribute("errorSpecialCharacterMessage");
-      %>
+      <% String errorSpecialCharacterMessage = (String) request.getAttribute("errorSpecialCharacterMessage"); %>
       <% if (errorSpecialCharacterMessage != null) { %>
       alert("<%= errorSpecialCharacterMessage %>");
       <% } %>
@@ -87,7 +92,6 @@
 
     .button:hover {
       background-color: #FF4A4A;
-
     }
 
     .button-secondary {
@@ -178,14 +182,10 @@
 <div class="container">
   <!-- Barra lateral izquierda para el filtro -->
   <div class="sidebar">
-
-
-
     <!-- Formulario de filtros y búsqueda -->
     <form action="${pageContext.request.contextPath}/AnuncioSv" method="get" class="filter-form">
-        <label for="nombreRestauranteFilter" style="font-weight: bold; color: #553;">Filtrar por tipo de comida:</label>
-        <input type="text" name="nombreRestaurante" id="nombreRestauranteFilter" placeholder="Ingresa el nombre de restaurante">
-
+      <label for="nombreRestauranteFilter" style="font-weight: bold; color: #553;">Filtrar por tipo de comida:</label>
+      <input type="text" name="nombreRestaurante" id="nombreRestauranteFilter" placeholder="Ingresa el nombre de restaurante">
 
       <label for="ubicacionFilter" style="font-weight: bold; color: #554;">Buscador por el nombre de restaurante:</label>
       <select name="ubicacion" id="ubicacionFilter">

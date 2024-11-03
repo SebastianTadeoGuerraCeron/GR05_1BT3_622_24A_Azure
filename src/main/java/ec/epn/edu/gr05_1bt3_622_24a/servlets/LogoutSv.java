@@ -16,6 +16,7 @@ public class LogoutSv extends HttpServlet {
         if (session != null) {
             session.invalidate();
         }
-        response.sendRedirect("Login.jsp");
+        // Redirige al login con el parámetro logout=true
+        response.sendRedirect("Login.jsp?logout=true");
     }
 }

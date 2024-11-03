@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Anthony
-  Date: 31/10/2024
-  Time: 14:04
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="es">
@@ -17,7 +10,7 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #FF914D, #FF6D6D); /* Fondo degradado */
+      background: linear-gradient(to right, #FF914D, #FF6D6D);
       color: #333;
       margin: 0;
       padding: 0;
@@ -107,6 +100,15 @@
     }
 
   </style>
+  <script>
+    // Mostrar el mensaje de éxito si el parámetro "success" está presente en la URL
+    window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('success') === 'true') {
+        alert('¡Registro exitoso! Bienvenido.');
+      }
+    };
+  </script>
 </head>
 <body>
 <div class="container">

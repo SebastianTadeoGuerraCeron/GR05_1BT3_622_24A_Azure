@@ -26,6 +26,8 @@ public class RegistroSv extends HttpServlet {
         Usuario usuario = usuarioService.registrarUsuario(username, email, password);
 
         usuarioController.create(usuario);
-        response.sendRedirect(request.getContextPath() + "/Login.jsp");
+
+        // Redirige al login con el parámetro success=true
+        response.sendRedirect(request.getContextPath() + "/Login.jsp?success=true");
     }
 }
