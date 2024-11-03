@@ -71,7 +71,21 @@ public class AnuncioSv extends HttpServlet {
         String tipoComida = request.getParameter("tipoComida");
         String ubicacion = request.getParameter("ubicacion");
         String descripcionOfertas = request.getParameter("descripcionOfertas");
-        
+
+        if (anuncioService.verificarContenidoOfensivo(nombreRestaurante,descripcionOfertas)) {
+            // Redirigir a la página de formulario con un mensaje de error
+            request.setAttribute("errorMessage", "El anuncio contiene palabras ofensivas y no se ha publicado.");
+            request.getRequestDispatcher("FormularioAnuncio.jsp").forward(request, response);
+            return;
+        }
+
+        if (!anuncioService.verificarContenidoMax200(nombreRestaurante,descripcionOfertas)) {
+            // Redirigir a la página de formulario con un mensaje de error
+            request.setAttribute("errorLengthMessage", "El anuncio excede los 200 caracteres y no se ha publicado.");
+            request.getRequestDispatcher("FormularioAnuncio.jsp").forward(request, response);
+            return;
+        }
+
 
         // Crear el anuncio usando el servicio, pasando el usuario directamente como en ResenaSv
         Anuncio anuncio = anuncioService.crearAnuncio(nombreRestaurante, tipoComida, ubicacion, descripcionOfertas, usuario);
