@@ -22,14 +22,17 @@ public class AnuncioService {
         return anuncio;
     }
 
-    // Método para filtrar anuncios por ubicación (recibe una lista de anuncios)
     public List<Anuncio> filtrarAnunciosPorUbicacion(List<Anuncio> todosLosAnuncios, String ubicacion) {
-        if (ubicacion == null || ubicacion.equals("Todas")) {
+        if (esUbicacionInvalida(ubicacion)) {
             return todosLosAnuncios;
         }
         return todosLosAnuncios.stream()
                 .filter(anuncio -> anuncio.getUbicacion().equalsIgnoreCase(ubicacion))
                 .collect(Collectors.toList());
+    }
+
+    private boolean esUbicacionInvalida(String ubicacion) {
+        return ubicacion == null || ubicacion.equals("Todas");
     }
 
     // Método para filtrar anuncios por nombre del restaurante (recibe una lista de anuncios)
