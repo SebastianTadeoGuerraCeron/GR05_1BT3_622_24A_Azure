@@ -39,12 +39,12 @@ public class AnuncioSv extends HttpServlet {
         // Obtener todos los anuncios directamente desde el controlador
         List<Anuncio> anuncios = anuncioController.findAnuncioEntities();
 
-        /*
+
         // Aplicar filtros usando AnuncioService si es necesario
         if (ubicacion != null && !ubicacion.isEmpty() && !ubicacion.equals("Todas")) {
             anuncios = anuncioService.filtrarAnunciosPorUbicacion(anuncios, ubicacion);
         }
-         */
+
 
         /*
         if (nombreRestaurante != null && !nombreRestaurante.isEmpty()) {

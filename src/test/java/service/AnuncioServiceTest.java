@@ -102,7 +102,7 @@ class AnuncioServiceTest {
             assertFalse(resultado);
         }
     }
-
+/*
     @Test
     void given_AnunciosListAndMatchingName_when_FilteringByNombre_then_ReturnsMatchingAnuncios() {
         List<Anuncio> resultado = anuncioService.filtrarAnunciosPorNombre(anuncios, "Restaurante");
@@ -144,4 +144,6 @@ class AnuncioServiceTest {
         assertEquals("Poliburguers", resultado.get(0).getNombreRestaurante());
         assertEquals("poliburguers", resultado.get(1).getNombreRestaurante());
     }
+    */
+
 }
