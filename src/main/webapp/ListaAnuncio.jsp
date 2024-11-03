@@ -168,7 +168,7 @@
   <!-- Barra lateral izquierda para el filtro -->
   <div class="sidebar">
 
-    <!-- Formulario de filtros y búsqueda
+    <!-- Formulario de filtros y búsqueda -->
     <form action="${pageContext.request.contextPath}/AnuncioSv" method="get" class="filter-form">
       <label for="nombreRestauranteFilter" style="font-weight: bold; color: #555;">Buscar por nombre de restaurante:</label>
       <input type="text" name="nombreRestaurante" id="nombreRestauranteFilter" placeholder="Ingrese nombre de restaurante">
@@ -218,7 +218,7 @@
       </select>
 
       <button type="submit">Filtrar</button>
-    </form> -->
+    </form>
 
     <!-- Botones de acción separados del botón de filtro -->
     <div class="action-buttons">
