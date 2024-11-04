@@ -114,6 +114,6 @@ class AnuncioSvTest {
         verify(anuncioController).create(mockAnuncio);
 
         // Verificar que la respuesta redirige a la URL esperada
-        verify(response).sendRedirect("AnuncioSv");
+        verify(response).sendRedirect("AnuncioSv?anuncioSuccess=true");
     }
 }

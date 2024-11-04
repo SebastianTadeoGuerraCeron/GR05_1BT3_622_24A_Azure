@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Anthony
-  Date: 31/10/2024
-  Time: 14:05
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="es">
@@ -123,6 +116,19 @@
       font-size: 0.9em;
     }
   </style>
+
+  <script>
+    // Mostrar el mensaje de éxito si el parámetro "success" o "logout" está presente en la URL
+    window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('success') === 'true') {
+        alert('¡Registro exitoso! Por favor, inicia sesión.');
+      }
+      if (urlParams.get('logout') === 'true') {
+        alert('¡Cierre de sesión exitoso!');
+      }
+    };
+  </script>
 </head>
 <body>
 <div class="login-container">
