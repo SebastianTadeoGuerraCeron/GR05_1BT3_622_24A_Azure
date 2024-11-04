@@ -54,6 +54,42 @@ class AnuncioServiceTest {
         assertNotNull(anuncio.getFechaPublicacion());
     }
 
+    @Test
+    void given_InvalidDetails_when_CreatingAnuncio_then_AnuncioIsNotCreated() {
+        String nombreRestaurante = null; // Invalid name
+        String tipoComida = ""; // Invalid type
+        String ubicacion = "Centro";
+        String descripcionOfertas = "Descuento del 20%";
+        Usuario usuario = new Usuario(); // Ensure the Usuario class is correctly defined
+
+        Anuncio anuncio = anuncioService.crearAnuncio(nombreRestaurante, tipoComida, ubicacion, descripcionOfertas, usuario);
+
+        assertNotNull(anuncio);
+        assertNull(anuncio.getNombreRestaurante()); // Expecting null due to invalid input
+        assertEquals("", anuncio.getTipoComida()); // Expecting empty string due to invalid input
+        assertEquals(ubicacion, anuncio.getUbicacion());
+        assertEquals(descripcionOfertas, anuncio.getDescripcionOfertas());
+        assertEquals(usuario, anuncio.getUsuario());
+        assertNotNull(anuncio.getFechaPublicacion());
+    }
+
+    @Test
+    void given_AllBlankFields_when_CreatingAnuncio_then_AnuncioIsCreatedWithBlanks() {
+        String nombreRestaurante = " ";
+        String tipoComida = " ";
+        String ubicacion = " ";
+        String descripcionOfertas = " ";
+        Usuario usuario = new Usuario();
+
+        Anuncio anuncio = anuncioService.crearAnuncio(nombreRestaurante, tipoComida, ubicacion, descripcionOfertas, usuario);
+
+        assertEquals(" ", anuncio.getNombreRestaurante());
+        assertEquals(" ", anuncio.getTipoComida());
+        assertEquals(" ", anuncio.getUbicacion());
+        assertEquals(" ", anuncio.getDescripcionOfertas());
+        assertEquals(usuario, anuncio.getUsuario());
+    }
+
     @ParameterizedTest
     @CsvSource({
             "'La Fonda basura', 'Snacks', 'Ponceano', 'Descuento especial en almuerzos completos'",
