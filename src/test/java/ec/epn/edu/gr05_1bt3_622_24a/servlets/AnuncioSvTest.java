@@ -42,13 +42,12 @@ class AnuncioSvTest {
     @Mock
     private AnuncioService anuncioService;
 
+    @InjectMocks
     private AnuncioSv anuncioSv;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        // Crear instancia de AnuncioSv con mocks en lugar de las instancias reales
-        anuncioSv = new AnuncioSv(anuncioController, anuncioService);
     }
 
     @Test
