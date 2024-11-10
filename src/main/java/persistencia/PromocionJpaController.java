@@ -1,6 +1,9 @@
 package persistencia;
 
-import jakarta.persistence.*;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.PersistenceException;
 import modelo.Promocion;
 
 import java.util.List;
@@ -10,10 +13,6 @@ public class PromocionJpaController {
 
     public PromocionJpaController(EntityManagerFactory emf) {
         this.emf = emf;
-    }
-
-    public PromocionJpaController() {
-        emf = Persistence.createEntityManagerFactory("JavaWebLasHuequitas");
     }
 
     private EntityManager getEntityManager() {
@@ -81,7 +80,7 @@ public class PromocionJpaController {
         }
     }
 
-    public Promocion findPromocionEntity(Long id) {
+    public Promocion findPromocion(Long id) {
         EntityManager em = getEntityManager();
         try {
             return em.find(Promocion.class, id);
@@ -90,12 +89,12 @@ public class PromocionJpaController {
         }
     }
 
-    public List<Promocion> findPromocionesEntities() {
+    public List<Promocion> findPromociones() {
         EntityManager em = getEntityManager();
         try {
             return em.createQuery("SELECT p FROM Promocion p", Promocion.class).getResultList();
         } finally {
             em.close();
-        }
-    }
+        }
+    }
 }
