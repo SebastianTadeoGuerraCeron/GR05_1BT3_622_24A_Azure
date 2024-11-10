@@ -12,6 +12,8 @@
         <class>modelo.Usuario</class>
         <class>modelo.Reaccion</class>
         <class>modelo.Anuncio</class>
+        <class>modelo.Promocion</class>
+
 
         <!-- Configuración de la base de datos -->
         <properties>
