@@ -36,10 +36,6 @@ public class Promocion {
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
-    @OneToMany(mappedBy = "promocion", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Reaccion> reacciones;  // Asociar todas las reacciones a la reseña
-
-
     // Getters y Setters
 
     public Long getId() {
@@ -106,11 +102,4 @@ public class Promocion {
         this.usuario = usuario;
     }
 
-    public List<Reaccion> getReacciones() {
-        return reacciones;
-    }
-
-    public void setReacciones(List<Reaccion> reacciones) {
-        this.reacciones = reacciones;
-    }
 }

@@ -1,17 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: HP
-  Date: 10/11/2024
-  Time: 03:52 p. m.
-  To change this template use File | Settings | File Templates.
---%>
-<%--
-  Created by IntelliJ IDEA.
-  User: HP
-  Date: 10/11/2024
-  Time: 03:41 p. m.
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="modelo.Promocion" %>
 <%@ page import="java.util.List" %>
@@ -59,9 +45,6 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
     .header {
@@ -111,9 +94,8 @@
       margin-top: 30px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start; /* Alinear los botones a la izquierda */
       width: 100%;
-      max-width: 250px;
     }
 
     .promocion {
@@ -167,12 +149,15 @@
   } else {
     for (Promocion promocion : promociones) {
   %>
-  <!--  <div class="promocion">
-           <h3><%= promocion.getNombreRestaurante() %> - <%= promocion.getTipoComida() %></h3>
-        <p>Ubicación: <%= promocion.getUbicacion() %></p>
-        <p class="oferta">Descripción de Ofertas: <%= promocion.getDescripcionOfertas() %></p>
-        <p>Publicado el: <%= promocion.getFechaPublicacion() %></p>
-    </div>  -->
+  <div class="promocion">
+    <h3><%= promocion.getTitulo() != null ? promocion.getTitulo() : "Título no disponible" %> -
+      <%= promocion.getTipoPromocion() != null ? promocion.getTipoPromocion() : "Tipo de promoción no especificado" %>
+    </h3>
+    <p>Nombre del Restaurante: <%= promocion.getNombreRestaurante() != null ? promocion.getNombreRestaurante() : "No disponible" %></p>
+    <p>Ubicación: <%= promocion.getUbicacion() != null ? promocion.getUbicacion() : "Ubicación no disponible" %></p>
+    <p class="oferta">Condiciones: <%= promocion.getCondiciones() != null ? promocion.getCondiciones() : "Condiciones no disponibles" %></p>
+    <p>Publicado el: <%= promocion.getFechaPublicacion() != null ? promocion.getFechaPublicacion().toString() : "Fecha no disponible" %></p>
+  </div>
   <%
       }
     }

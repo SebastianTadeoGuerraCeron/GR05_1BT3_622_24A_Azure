@@ -30,6 +30,8 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Anuncio> anuncios; // Lista de anuncios asociados al usuario
 
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Promocion> promociones = new ArrayList<>(); // Lista de reseñas asociadas al usuario
     // Getters y Setters
     public Long getId() {
         return id;
