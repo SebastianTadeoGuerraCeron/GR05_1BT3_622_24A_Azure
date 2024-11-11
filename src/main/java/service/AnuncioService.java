@@ -18,56 +18,51 @@ public class AnuncioService {
         anuncio.setUbicacion(ubicacion);
         anuncio.setDescripcionOfertas(descripcionOfertas);
         anuncio.setFechaPublicacion(new Date());
-        anuncio.setUsuario(usuario); // Asignación directa del usuario al anuncio
+        anuncio.setUsuario(usuario);
         return anuncio;
     }
 
     public List<Anuncio> filtrarAnunciosPorUbicacion(List<Anuncio> todosLosAnuncios, String ubicacion) {
-        if (esUbicacionInvalida(ubicacion)) {
-            return todosLosAnuncios;
-        }
-        return todosLosAnuncios.stream()
+        return esUbicacionValida(ubicacion)
+                ? todosLosAnuncios.stream()
                 .filter(anuncio -> anuncio.getUbicacion().equalsIgnoreCase(ubicacion))
-                .collect(Collectors.toList());
+                .collect(Collectors.toList())
+                : todosLosAnuncios;
     }
 
-    private boolean esUbicacionInvalida(String ubicacion) {
-        return ubicacion == null || ubicacion.equals("Todas");
+    private boolean esUbicacionValida(String ubicacion) {
+        return ubicacion != null && !ubicacion.equals("Todas");
     }
 
     public List<Anuncio> filtrarAnunciosPorNombre(List<Anuncio> todosLosAnuncios, String nombreRestaurante) {
-        if (esNombreInvalido(nombreRestaurante)) {
-            return todosLosAnuncios;
-        }
-        return todosLosAnuncios.stream()
+        return esNombreValido(nombreRestaurante)
+                ? todosLosAnuncios.stream()
                 .filter(anuncio -> anuncio.getNombreRestaurante().toLowerCase().contains(nombreRestaurante.toLowerCase()))
-                .collect(Collectors.toList());
+                .collect(Collectors.toList())
+                : todosLosAnuncios;
     }
 
-    private boolean esNombreInvalido(String nombreRestaurante) {
-        return nombreRestaurante == null || nombreRestaurante.trim().isEmpty();
+    private boolean esNombreValido(String nombreRestaurante) {
+        return nombreRestaurante != null && !nombreRestaurante.trim().isEmpty();
     }
-
 
     public boolean verificarContenidoOfensivo(String nombreRestaurante, String descripcionOfertas) {
-        return esOfensivo(nombreRestaurante) || esOfensivo(descripcionOfertas);
+        return contieneOfensivo(nombreRestaurante) || contieneOfensivo(descripcionOfertas);
     }
 
-    private boolean esOfensivo(String texto) {
+    private boolean contieneOfensivo(String texto) {
         return moderador.verificarOfensivo(texto);
     }
 
     public boolean verificarContenidoCaracteresEspeciales(String nombreRestaurante) {
-        boolean nombreRestauranteCaracteresEspeciales = moderador.verificarCaracteresEspeciales(nombreRestaurante);
-        return nombreRestauranteCaracteresEspeciales;
+        return moderador.verificarCaracteresEspeciales(nombreRestaurante);
     }
 
     public boolean verificarContenidoMax200(String nombreRestaurante, String descripcionOfertas) {
-        return esTextoValido(nombreRestaurante) && esTextoValido(descripcionOfertas);
+        return esTextoConLongitudValida(nombreRestaurante) && esTextoConLongitudValida(descripcionOfertas);
     }
 
-    private boolean esTextoValido(String texto) {
+    private boolean esTextoConLongitudValida(String texto) {
         return moderador.esMenorOIgualA200(texto);
     }
-
 }
