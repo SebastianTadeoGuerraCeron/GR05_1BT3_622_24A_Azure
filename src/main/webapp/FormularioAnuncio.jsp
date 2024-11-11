@@ -173,7 +173,7 @@
     <label for="descripcionOfertas">Descripción de Ofertas:</label>
     <textarea id="descripcionOfertas" name="descripcionOfertas" required></textarea>
 
-    <button type="submit" class="button">Crear Anuncio</button>
+    <button type="submit" class="button">Publicar Anuncio</button>
   </form>
 
   <a href="${pageContext.request.contextPath}/AnuncioSv" class="button button-secondary">Volver a lista de anuncios</a>

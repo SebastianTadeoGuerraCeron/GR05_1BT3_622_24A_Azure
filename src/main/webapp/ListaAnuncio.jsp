@@ -252,7 +252,7 @@
       List<Anuncio> anuncios = (List<Anuncio>) request.getAttribute("anuncios");
       if (anuncios == null || anuncios.isEmpty()) {
     %>
-    <p>No hay anuncios disponibles en este momento</p>
+    <p>No hay anuncios disponibles para mostrar</p>
     <%
     } else {
       for (Anuncio anuncio : anuncios) {

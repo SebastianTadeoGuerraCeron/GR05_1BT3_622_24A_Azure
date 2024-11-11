@@ -47,7 +47,7 @@ public class AnuncioSv extends HttpServlet {
         if (nombreRestaurante != null && !nombreRestaurante.isEmpty()) {
             // Verificar caracteres especiales
             if (anuncioService.verificarContenidoCaracteresEspeciales(nombreRestaurante)) {
-                request.setAttribute("errorSpecialCharacterMessage", "El nombre del restaurante contiene caracteres especiales.");
+                request.setAttribute("errorSpecialCharacterMessage", "El nombre del restaurante contiene caracteres especiales.");
             } else {
                 // Si no hay caracteres especiales, filtrar anuncios por nombre
                 anuncios = anuncioService.filtrarAnunciosPorNombre(anuncios, nombreRestaurante);

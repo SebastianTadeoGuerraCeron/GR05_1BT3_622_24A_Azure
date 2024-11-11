@@ -180,7 +180,7 @@
         List<Resena> resenas = (List<Resena>) request.getAttribute("resenas");
         if (resenas == null || resenas.isEmpty()) {
     %>
-    <p>No hay reseñas para mostrar.</p>
+    <p>No hay reseñas disponibles en este momento</p>
     <%
     } else {
         for (Resena resena : resenas) {
