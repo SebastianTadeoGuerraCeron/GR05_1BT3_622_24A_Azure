@@ -214,7 +214,7 @@
       List<Promocion> promociones = (List<Promocion>) request.getAttribute("promociones");
       if (promociones == null || promociones.isEmpty()) {
     %>
-      <!-- Mensaje para cuando accede y no hay promociones -->
+    <!-- Mensaje para cuando accede y no hay promociones -->
     <p>No hay promociones disponibles en este momento</p>
     <%
     } else {
@@ -228,6 +228,14 @@
       <p>Ubicación: <%= promocion.getUbicacion() != null ? promocion.getUbicacion() : "Ubicación no disponible" %></p>
       <p class="oferta">Condiciones: <%= promocion.getCondiciones() != null ? promocion.getCondiciones() : "Condiciones no disponibles" %></p>
       <p>Publicado el: <%= promocion.getFechaPublicacion() != null ? promocion.getFechaPublicacion().toString() : "Fecha no disponible" %></p>
+      <!-- Mostrar el número de "Me Encanta" -->
+      <p>Me Encanta: <%= promocion.getFavoritosPromocion() != null ? promocion.getFavoritosPromocion().size() : 0 %></p>
+
+      <!-- Botón de "Me Encanta" -->
+      <form action="${pageContext.request.contextPath}/FavoritoPromocionSv" method="post" style="display:inline;">
+        <input type="hidden" name="promocionId" value="<%= promocion.getId() %>">
+        <button type="submit" class="button">❤ Me Encanta</button>
+      </form>
     </div>
     <%
         }
