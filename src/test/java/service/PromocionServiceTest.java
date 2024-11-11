@@ -97,5 +97,21 @@ class PromocionServiceTest {
         }
     }
 
+
+    @ParameterizedTest
+    @CsvSource({
+            "'Promoción basura', 'Restaurante ABC', 'Condiciones normales'",
+            "'Título normal', 'Restaurante mierda', 'Condiciones normales'",
+            "'Título normal', 'Restaurante ABC', 'Condiciones basura'",
+            "'Título mierda', 'Restaurante ABC', 'Condiciones normales'"
+    })
+    void given_PromotionWithOffensiveWords_when_VerificarContenidoOfensivo_then_ReturnsTrue(
+            String titulo, String nombreRestaurante, String condiciones) {
+
+        boolean resultado = promocionService.verificarContenidoOfensivo(titulo, nombreRestaurante, condiciones);
+        System.out.println("Resultado del test: " + resultado);
+        // Espera que el resultado sea true porque alguna parte contiene una palabra ofensiva
+        assertTrue(resultado);
+    }
 }
 

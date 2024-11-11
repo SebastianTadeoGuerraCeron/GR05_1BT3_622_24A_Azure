@@ -14,7 +14,13 @@
     <script>
         window.onload = function() {
             // Verificar si existen mensajes de error y mostrarlos como alert
-            <% String errorLengthMessage = (String) request.getAttribute("errorLengthMessage"); %>
+            <%
+              String errorMessage = (String) request.getAttribute("errorMessage");
+              String errorLengthMessage = (String) request.getAttribute("errorLengthMessage");
+            %>
+            <% if (errorMessage != null) { %>
+            alert("<%= errorMessage %>");
+            <% } %>
             <% if (errorLengthMessage != null) { %>
             alert("<%= errorLengthMessage %>");
             <% } %>
@@ -192,7 +198,7 @@
 
         <!-- Botones de acción -->
         <button type="submit" class="button">Crear Promoción</button>
-        <a href="${pageContext.request.contextPath}/ListaPromocion.jsp" class="button-secondary">Volver a lista de promociones</a>
+        <a href="${pageContext.request.contextPath}/PromocionSv" class="button-secondary">Volver a lista de promociones</a>
     </form>
 </div>
 </body>
