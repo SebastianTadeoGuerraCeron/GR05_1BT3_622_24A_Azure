@@ -35,7 +35,7 @@ public class FavoritoPromocionSv extends HttpServlet {
 
         if (haReaccionado) {
             // Redirigir con un mensaje de error si ya ha reaccionado
-            response.sendRedirect("PromocionSv?showPopup=true&errorMessage=Ya%20has%20reaccionado%20a%20esta%20promocion.");
+            response.sendRedirect("PromocionSv?reaccionDuplicada=true");
         } else {
             // Crear la reacción "Me Encanta" y persistirla
             FavoritoPromocion favorito = favoritoPromocionService.agregarMeEncanta(promocion, usuario);
