@@ -34,16 +34,18 @@ public class ReaccionJpaController {
         }
     }
 
-    public boolean hasUserReactedToResena(Long userId, Long resenaId) {
+    public boolean hasUserReactedToResena(Long userId, Long resenaId, String tipoReaccion) {
         EntityManager em = getEntityManager();
         try {
-            Query query = em.createQuery("SELECT r FROM Reaccion r WHERE r.usuario.id = :userId AND r.resena.id = :resenaId");
+            Query query = em.createQuery("SELECT r FROM Reaccion r WHERE r.usuario.id = :userId AND r.resena.id = :resenaId AND r.tipo = :tipoReaccion");
             query.setParameter("userId", userId);
             query.setParameter("resenaId", resenaId);
-            return !query.getResultList().isEmpty(); // Devuelve true si hay una reacción
+            query.setParameter("tipoReaccion", tipoReaccion);
+            return !query.getResultList().isEmpty(); // Devuelve true si hay una reacción del tipo especificado
         } finally {
             em.close();
         }
     }
+
 
 }
