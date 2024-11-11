@@ -32,6 +32,10 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Promocion> promociones = new ArrayList<>(); // Lista de reseñas asociadas al usuario
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<FavoritoPromocion> favoritosPromocion = new ArrayList<>();
+
     // Getters y Setters
     public Long getId() {
         return id;
@@ -69,8 +73,7 @@ public class Usuario {
         return resenas;
     }
 
-    public void setResenas(List<Resena> resenas) {
-        this.resenas = resenas;
+    public void setResenas(List<Resena> resenas) {this.resenas = resenas;
     }
 
     public List<Comentario> getComentarios() {
@@ -87,5 +90,12 @@ public class Usuario {
 
     public void setAnuncios(List<Anuncio> anuncios) {
         this.anuncios = anuncios;
+    }
+
+    public List<FavoritoPromocion> getFavoritosPromocion() {
+        return favoritosPromocion;
+    }
+    public void setFavoritosPromocion(List<FavoritoPromocion> favoritosPromocion) {
+        this.favoritosPromocion = favoritosPromocion;
     }
 }

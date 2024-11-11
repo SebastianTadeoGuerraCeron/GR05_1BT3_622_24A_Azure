@@ -36,6 +36,9 @@ public class Promocion {
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
+    @OneToMany(mappedBy = "promocion", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<FavoritoPromocion> favoritosPromocion = new ArrayList<>();
+
     // Getters y Setters
 
     public Long getId() {
@@ -100,6 +103,14 @@ public class Promocion {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public List<FavoritoPromocion> getFavoritosPromocion() {
+        return favoritosPromocion;
+    }
+
+    public void setFavoritosPromocion(List<FavoritoPromocion> favoritosPromocion) {
+        this.favoritosPromocion = favoritosPromocion;
     }
 
 }

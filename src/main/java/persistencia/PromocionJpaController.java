@@ -97,4 +97,31 @@ public class PromocionJpaController {
             em.close();
         }
     }
+
+    // Nuevo método con JOIN FETCH
+    public List<Promocion> findAllWithFavoritos() {
+        EntityManager em = getEntityManager();
+        try {
+            TypedQuery<Promocion> query = em.createQuery(
+                    "SELECT p FROM Promocion p LEFT JOIN FETCH p.favoritosPromocion",
+                    Promocion.class
+            );
+            return query.getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    public Promocion findPromocionWithFavoritos(Long id) {
+        EntityManager em = getEntityManager();
+        try {
+            return em.createQuery(
+                            "SELECT p FROM Promocion p LEFT JOIN FETCH p.favoritosPromocion WHERE p.id = :id", Promocion.class)
+                    .setParameter("id", id)
+                    .getSingleResult();
+        } finally {
+            em.close();
+        }
+    }
+
 }
