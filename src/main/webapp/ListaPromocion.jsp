@@ -214,6 +214,7 @@
       List<Promocion> promociones = (List<Promocion>) request.getAttribute("promociones");
       if (promociones == null || promociones.isEmpty()) {
     %>
+      <!-- Mensaje para cuando accede y no hay promociones -->
     <p>No hay promociones disponibles en este momento</p>
     <%
     } else {

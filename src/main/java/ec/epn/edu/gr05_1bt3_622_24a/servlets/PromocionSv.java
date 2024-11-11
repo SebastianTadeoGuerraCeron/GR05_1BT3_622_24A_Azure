@@ -24,6 +24,12 @@ public class PromocionSv extends HttpServlet {
         this.promocionService = new PromocionService();
     }
 
+
+    public PromocionSv(PromocionJpaController promocionController, PromocionService promocionService) {
+        this.promocionController = promocionController;
+        this.promocionService = promocionService;
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Obtener el tipo de promoción del parámetro de solicitud
