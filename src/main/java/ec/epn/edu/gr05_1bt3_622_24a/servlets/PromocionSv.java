@@ -50,6 +50,13 @@ public class PromocionSv extends HttpServlet {
         String tipoPromocion = request.getParameter("tipoPromocion");
         String condiciones = request.getParameter("condiciones");
 
+        if (!promocionService.verificarContenidoMax200(titulo,nombreRestaurante,condiciones)) {
+            request.setAttribute("errorLengthMessage", "El anuncio excede los 200 caracteres y no se ha publicado.");
+            request.getRequestDispatcher("FormularioPromocion.jsp").forward(request, response);
+            return;
+        }
+
+
         // Crear la promoción utilizando PromocionService
         Promocion promocion = promocionService.crearPromocion(titulo, nombreRestaurante, ubicacion, tipoPromocion, condiciones, usuario);
 

@@ -44,10 +44,9 @@ public class PromocionService {
         return moderador.verificarCaracteresEspeciales(titulo) || moderador.verificarCaracteresEspeciales(nombreRestaurante);
     }
 
-    public boolean verificarContenidoMax200(String titulo, String nombreRestaurante, String condiciones) {
-        return esTextoValido(titulo) && esTextoValido(nombreRestaurante) && esTextoValido(condiciones);
+    public boolean verificarContenidoMax200(String tituloPromocion, String nombreRestaurante,String condiciones) {
+        return esTextoValido(tituloPromocion) && esTextoValido(nombreRestaurante) && esTextoValido(condiciones);
     }
-
     private boolean esTextoValido(String texto) {
         return moderador.esMenorOIgualA200(texto);
     }
