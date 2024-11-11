@@ -1,9 +1,12 @@
 package service;
 
+import modelo.Anuncio;
 import modelo.Promocion;
 import modelo.Usuario;
 
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class PromocionService {
 
@@ -32,6 +35,18 @@ public class PromocionService {
         return promocion;
     }
 
+    public List<Promocion> filtrarPromocionesPorTipo(List<Promocion> todasLasPromociones, String tipoPromocion) {
+        if (esTipoPromocionInvalido(tipoPromocion)) {
+            return todasLasPromociones;
+        }
+        return todasLasPromociones.stream()
+                .filter(promocion -> promocion.getTipoPromocion().equalsIgnoreCase(tipoPromocion))
+                .collect(Collectors.toList());
+    }
+
+    private boolean esTipoPromocionInvalido(String tipoPromocion) {
+        return tipoPromocion == null || tipoPromocion.equalsIgnoreCase("Todos");
+    }
     public boolean verificarContenidoOfensivo(String titulo, String nombreRestaurante, String condiciones) {
         return esOfensivo(titulo) || esOfensivo(nombreRestaurante) || esOfensivo(condiciones);
     }

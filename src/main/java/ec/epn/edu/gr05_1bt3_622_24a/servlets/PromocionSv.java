@@ -26,8 +26,16 @@ public class PromocionSv extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Obtener el tipo de promoción del parámetro de solicitud
+        String tipoPromocion = request.getParameter("tipoPromocion");
+
+        // Obtener todas las promociones directamente desde el controlador
         List<Promocion> promociones = promocionController.findPromocionesEntities();
-        request.setAttribute("promociones", promociones);
+
+        // Aplicar filtro de tipo de promoción usando PromocionService si es necesario
+        if (tipoPromocion != null && !tipoPromocion.isEmpty() && !tipoPromocion.equalsIgnoreCase("Todos")) {
+            promociones = promocionService.filtrarPromocionesPorTipo(promociones, tipoPromocion);
+        }
 
         // Verificar si la promoción fue agregada con éxito y mostrar el mensaje
         String promocionSuccess = request.getParameter("promocionSuccess");
@@ -35,8 +43,11 @@ public class PromocionSv extends HttpServlet {
             request.setAttribute("successMessage", "¡Promoción agregada exitosamente!");
         }
 
+        // Pasar la lista de promociones (filtrada o completa) a la vista
+        request.setAttribute("promociones", promociones);
         request.getRequestDispatcher("ListaPromocion.jsp").forward(request, response);
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
