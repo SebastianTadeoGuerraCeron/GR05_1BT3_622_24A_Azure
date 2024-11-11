@@ -65,16 +65,9 @@
             background-color: #f9f9f9;
         }
 
-        /* Estilo para el campo de condiciones estático */
-        .static-field {
-            width: 100%;
-            padding: 10px;
-            font-size: 1em;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            color: #555;
-            min-height: 80px;
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px; /* Mantiene la altura fija */
         }
 
         .button {
@@ -131,7 +124,6 @@
         <div class="form-group">
             <label for="ubicacion">Ubicación</label>
             <select id="ubicacion" name="ubicacion" required>
-                <option value="Todas">Todas</option>
                 <optgroup label="Zona Norte">
                     <option value="Calderón">Calderón</option>
                     <option value="Carcelén">Carcelén</option>
@@ -186,7 +178,7 @@
 
         <div class="form-group">
             <label for="condiciones">Condiciones</label>
-            <div id="condiciones" class="static-field">Especifica las condiciones de la promoción</div>
+            <textarea id="condiciones" name="condiciones" placeholder="Especifica las condiciones de la promoción"></textarea>
         </div>
 
         <!-- Botones de acción -->
