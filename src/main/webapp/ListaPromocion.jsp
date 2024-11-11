@@ -28,7 +28,7 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #FF914D, #FF6D6D); /* Fondo degradado */
+      background: linear-gradient(to right, #FF914D, #FF6D6D);
       color: #333;
       margin: 0;
       padding: 0;
@@ -45,6 +45,19 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 20px;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 25%;
+      padding-right: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .main-content {
+      width: 75%;
     }
 
     .header {
@@ -53,7 +66,7 @@
     }
 
     h2 {
-      color: #FF6D6D; /* Color de título */
+      color: #FF6D6D;
       font-size: 2.8em;
       font-weight: 700;
       margin: 0;
@@ -90,12 +103,47 @@
       background-color: #2c3e50;
     }
 
+    .filter-form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .filter-form select {
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      width: 90%;
+      max-width: 250px;
+      color: #333;
+      background-color: #f5f5f5;
+    }
+
+    .filter-form button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #FF6D6D;
+      color: white;
+      border: none;
+      margin-top: 10px;
+      width: 90%;
+      max-width: 250px;
+    }
+
+    .filter-form button:hover {
+      background-color: #FF4A4A;
+    }
+
     .action-buttons {
       margin-top: 30px;
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* Alinear los botones a la izquierda */
-      width: 100%;
+      width: 80%;
     }
 
     .promocion {
@@ -105,8 +153,6 @@
       margin-bottom: 15px;
       text-align: left;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 750px;
     }
 
     .promocion h3 {
@@ -134,39 +180,58 @@
 </head>
 <body>
 <div class="container">
-  <!-- Título de la página -->
-  <div class="header">
-    <h2>Promociones</h2>
+  <!-- Barra lateral izquierda para el filtro -->
+  <div class="sidebar">
+    <!-- Formulario de filtro por tipo de promoción -->
+    <form action="${pageContext.request.contextPath}/PromocionSv" method="get" class="filter-form">
+      <label for="tipoPromocionFilter" style="font-weight: bold; color: #553;">Filtrar por tipo de promoción:</label>
+      <select name="tipoPromocion" id="tipoPromocionFilter">
+        <option value="Todos">Todos</option>
+        <option value="Cortesia">Cortesía</option>
+        <option value="Porcentaje de descuento">Porcentaje de descuento</option>
+        <option value="Descuento por método de pago">Descuento por método de pago</option>
+        <option value="Descuento por evento especial">Descuento por evento especial</option>
+      </select>
+
+      <button type="submit">Filtrar</button>
+    </form>
+
+    <!-- Botones de acción -->
+    <div class="action-buttons">
+      <a href="${pageContext.request.contextPath}/FormularioPromocion.jsp" class="button">Agregar Nueva Promoción</a>
+      <a href="${pageContext.request.contextPath}/Home.jsp" class="button button-secondary">Regresar a Home</a>
+    </div>
   </div>
 
-  <!-- Mostrar lista de promociones -->
-  <%
-    List<Promocion> promociones = (List<Promocion>) request.getAttribute("promociones");
-    if (promociones == null || promociones.isEmpty()) {
-  %>
-  <p>No hay promociones disponibles en este momento</p>
-  <%
-  } else {
-    for (Promocion promocion : promociones) {
-  %>
-  <div class="promocion">
-    <h3><%= promocion.getTitulo() != null ? promocion.getTitulo() : "Título no disponible" %> -
-      <%= promocion.getTipoPromocion() != null ? promocion.getTipoPromocion() : "Tipo de promoción no especificado" %>
-    </h3>
-    <p>Nombre del Restaurante: <%= promocion.getNombreRestaurante() != null ? promocion.getNombreRestaurante() : "No disponible" %></p>
-    <p>Ubicación: <%= promocion.getUbicacion() != null ? promocion.getUbicacion() : "Ubicación no disponible" %></p>
-    <p class="oferta">Condiciones: <%= promocion.getCondiciones() != null ? promocion.getCondiciones() : "Condiciones no disponibles" %></p>
-    <p>Publicado el: <%= promocion.getFechaPublicacion() != null ? promocion.getFechaPublicacion().toString() : "Fecha no disponible" %></p>
-  </div>
-  <%
+  <!-- Contenido principal para las promociones -->
+  <div class="main-content">
+    <div class="header">
+      <h2>Promociones</h2>
+    </div>
+
+    <!-- Mostrar lista de promociones -->
+    <%
+      List<Promocion> promociones = (List<Promocion>) request.getAttribute("promociones");
+      if (promociones == null || promociones.isEmpty()) {
+    %>
+    <p>No hay promociones disponibles en este momento</p>
+    <%
+    } else {
+      for (Promocion promocion : promociones) {
+    %>
+    <div class="promocion">
+      <h3><%= promocion.getTitulo() != null ? promocion.getTitulo() : "Título no disponible" %> -
+        <%= promocion.getTipoPromocion() != null ? promocion.getTipoPromocion() : "Tipo de promoción no especificado" %>
+      </h3>
+      <p>Nombre del Restaurante: <%= promocion.getNombreRestaurante() != null ? promocion.getNombreRestaurante() : "No disponible" %></p>
+      <p>Ubicación: <%= promocion.getUbicacion() != null ? promocion.getUbicacion() : "Ubicación no disponible" %></p>
+      <p class="oferta">Condiciones: <%= promocion.getCondiciones() != null ? promocion.getCondiciones() : "Condiciones no disponibles" %></p>
+      <p>Publicado el: <%= promocion.getFechaPublicacion() != null ? promocion.getFechaPublicacion().toString() : "Fecha no disponible" %></p>
+    </div>
+    <%
+        }
       }
-    }
-  %>
-
-  <!-- Botones de acción -->
-  <div class="action-buttons">
-    <a href="${pageContext.request.contextPath}/FormularioPromocion.jsp" class="button">Agregar Nueva Promoción</a>
-    <a href="${pageContext.request.contextPath}/Home.jsp" class="button button-secondary">Regresar a Home</a>
+    %>
   </div>
 </div>
 </body>
