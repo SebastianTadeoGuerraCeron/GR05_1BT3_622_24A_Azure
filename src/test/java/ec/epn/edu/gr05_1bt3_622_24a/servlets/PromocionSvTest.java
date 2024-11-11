@@ -63,14 +63,15 @@ class PromocionSvTest {
         promociones.add(promocion2);
 
         // Configurar mocks para simular el comportamiento de la base de datos y el filtro
-        when(promocionController.findPromocionesEntities()).thenReturn(promociones);
+        when(promocionController.findAllWithFavoritos()).thenReturn(promociones);
         when(request.getParameter("tipoPromocion")).thenReturn("Porcentaje de descuento");
         when(promocionService.filtrarPromocionesPorTipo(promociones, "Porcentaje de descuento")).thenReturn(List.of(promocion1));
         when(request.getRequestDispatcher("ListaPromocion.jsp")).thenReturn(dispatcher);
 
-        // Ejecutar doGet y verificar el comportamiento esperado
+        // Ejecutar doGet
         promocionSv.doGet(request, response);
 
+        // Verificar que se establece la lista filtrada y se hace forward
         verify(request).setAttribute("promociones", List.of(promocion1));
         verify(dispatcher).forward(request, response);
     }
