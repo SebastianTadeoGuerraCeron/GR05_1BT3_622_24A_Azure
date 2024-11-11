@@ -1,5 +1,6 @@
 package service;
 
+import modelo.Anuncio;
 import modelo.Promocion;
 import modelo.Usuario;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,16 +8,27 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PromocionServiceTest {
     private PromocionService promocionService;
+    private List<Promocion> promociones;
+    private Usuario usuario;
 
     @BeforeEach
     void setUp() {
         promocionService = new PromocionService();
+        usuario = new Usuario(); // Asegúrate de que la clase Usuario esté correctamente definida
+        // Crear una lista de promociones para las pruebas
+        Promocion promocion1 = promocionService.crearPromocion("Descuento Especial", "La Ronda Café", "La Carolina", "Cortesia", "Deliciosas empanadas y café de especialidad a precio especial", usuario);
+        Promocion promocion2 =promocionService.crearPromocion("Parrillada Familiar", "El Fogón Quiteño", "Cotocollao", "Descuento por evento especial", "Descuento en parrilladas", usuario);
+        Promocion promocion3 =promocionService.crearPromocion("Desayuno Continental", "Cafetería Central", "Bellavista", "Porcentaje de descuento", "Descuento en desayunos", usuario);
+        promociones = Arrays.asList(promocion1, promocion2, promocion3);
     }
 
     @Test
@@ -113,5 +125,33 @@ class PromocionServiceTest {
         // Espera que el resultado sea true porque alguna parte contiene una palabra ofensiva
         assertTrue(resultado);
     }
+
+    @Test
+    void given_PromocionesListAndMatchingType_when_FilteringByType_then_ReturnsMatchingPromociones() {
+        // Filtrar por el tipo de promoción "Cortesía"
+        List<Promocion> resultado = promocionService.filtrarPromocionesPorTipo(promociones, "Cortesia");
+        // Verificar que solo se retornen promociones que coincidan con el tipo "Cortesía"
+        assertEquals(1, resultado.size());
+        assertEquals("Cortesia", resultado.get(0).getTipoPromocion());
+    }
+    @Test
+    void given_PromocionesListAndNonMatchingType_when_FilteringByType_then_ReturnsEmptyList() {
+        // Filtrar por un tipo de promoción que no existe en la lista, por ejemplo "Descuento por metodo de pago"
+        List<Promocion> resultado = promocionService.filtrarPromocionesPorTipo(promociones, "Descuento por método de pago");
+
+        // No se deben retornar promociones porque no existe el tipo
+        assertEquals(0, resultado.size());
+    }
+
+    @Test
+    void given_PromocionesListAndTodoSelection_when_FilteringByType_then_ReturnsAllPromociones() {
+        // Filtrar con la selección "TODO" para obtener todas las promociones
+        List<Promocion> resultado = promocionService.filtrarPromocionesPorTipo(promociones, "Todos");
+
+        // Verificar que se retornen todas las promociones en la lista original
+        assertEquals(promociones.size(), resultado.size());
+    }
+
+
 }
 
