@@ -1,6 +1,5 @@
 package service;
 
-import modelo.Anuncio;
 import modelo.Promocion;
 import modelo.Usuario;
 
@@ -12,15 +11,10 @@ public class PromocionService {
 
     private static final ModeradorService moderador = new ModeradorService();
 
-    public Promocion crearPromocion(String titulo, String nombreRestaurante, String ubicacion, String tipoPromocion, String condiciones, Usuario usuario) {
+    public Promocion crearPromocion(String titulo, String nombreRestaurante, String ubicacion,
+                                    String tipoPromocion, String condiciones, Usuario usuario) {
 
-        // Validar campos obligatorios para que no sean null ni vacíos
-        if (titulo == null || titulo.isEmpty() ||
-                nombreRestaurante == null || nombreRestaurante.isEmpty() ||
-                ubicacion == null || ubicacion.isEmpty() ||
-                tipoPromocion == null || tipoPromocion.isEmpty() ||
-                condiciones == null || condiciones.isEmpty() ||
-                usuario == null) {
+        if (camposInvalidos(titulo, nombreRestaurante, ubicacion, tipoPromocion, condiciones)) {
             return null;
         }
 
@@ -31,15 +25,21 @@ public class PromocionService {
         promocion.setTipoPromocion(tipoPromocion);
         promocion.setCondiciones(condiciones);
         promocion.setFechaPublicacion(new Date());
-        promocion.setUsuario(usuario); // Asignación directa del usuario a la promoción
+        promocion.setUsuario(usuario);
         return promocion;
     }
 
-    public List<Promocion> filtrarPromocionesPorTipo(List<Promocion> todasLasPromociones, String tipoPromocion) {
-        if (esTipoPromocionInvalido(tipoPromocion)) {
-            return todasLasPromociones;
+    private boolean camposInvalidos(String... campos) {
+        for (String campo : campos) {
+            if (campo == null || campo.isEmpty()) return true;
         }
-        return todasLasPromociones.stream()
+        return false;
+    }
+
+    public List<Promocion> filtrarPromocionesPorTipo(List<Promocion> todasLasPromociones, String tipoPromocion) {
+        return esTipoPromocionInvalido(tipoPromocion)
+                ? todasLasPromociones
+                : todasLasPromociones.stream()
                 .filter(promocion -> promocion.getTipoPromocion().equalsIgnoreCase(tipoPromocion))
                 .collect(Collectors.toList());
     }
@@ -47,6 +47,7 @@ public class PromocionService {
     private boolean esTipoPromocionInvalido(String tipoPromocion) {
         return tipoPromocion == null || tipoPromocion.equalsIgnoreCase("Todos");
     }
+
     public boolean verificarContenidoOfensivo(String titulo, String nombreRestaurante, String condiciones) {
         return esOfensivo(titulo) || esOfensivo(nombreRestaurante) || esOfensivo(condiciones);
     }
@@ -56,13 +57,18 @@ public class PromocionService {
     }
 
     public boolean verificarContenidoCaracteresEspeciales(String titulo, String nombreRestaurante) {
-        return moderador.verificarCaracteresEspeciales(titulo) || moderador.verificarCaracteresEspeciales(nombreRestaurante);
+        return contieneCaracteresEspeciales(titulo) || contieneCaracteresEspeciales(nombreRestaurante);
     }
 
-    public boolean verificarContenidoMax200(String tituloPromocion, String nombreRestaurante,String condiciones) {
-        return esTextoValido(tituloPromocion) && esTextoValido(nombreRestaurante) && esTextoValido(condiciones);
+    private boolean contieneCaracteresEspeciales(String texto) {
+        return moderador.verificarCaracteresEspeciales(texto);
     }
-    private boolean esTextoValido(String texto) {
+
+    public boolean verificarContenidoMax200(String tituloPromocion, String nombreRestaurante, String condiciones) {
+        return textoDentroDeLimite(tituloPromocion) && textoDentroDeLimite(nombreRestaurante) && textoDentroDeLimite(condiciones);
+    }
+
+    private boolean textoDentroDeLimite(String texto) {
         return moderador.esMenorOIgualA200(texto);
     }
 }
