@@ -12,6 +12,9 @@ import java.util.stream.Collectors;
 public class ResenaService {
     private final List<Resena> listaResenas = new ArrayList<>();
     private final ResenaJpaController resenaController = new ResenaJpaController();
+    private static final ModeradorService moderador = new ModeradorService();
+
+
     public Resena crearResena(String restaurante, String tipoComida, String descripcion, Usuario usuario) {
         Resena resena = new Resena();
         resena.setRestaurante(restaurante);
@@ -38,5 +41,21 @@ public class ResenaService {
 
     public List<Resena> obtenerResenasPorTipo(String tipoComida) {
         return resenaController.findResenasByTipoComidaWithReactions(tipoComida);
+    }
+
+    public boolean verificarContenidoOfensivo(String nombreRestaurante, String descripcionResena) {
+        return contieneOfensivo(nombreRestaurante) || contieneOfensivo(descripcionResena);
+    }
+
+    private boolean contieneOfensivo(String texto) {
+        return moderador.verificarOfensivo(texto);
+    }
+
+    public boolean verificarContenidoMax200(String nombreRestaurante, String descripcionResena) {
+        return esTextoConLongitudValida(nombreRestaurante) && esTextoConLongitudValida(descripcionResena);
+    }
+
+    private boolean esTextoConLongitudValida(String texto) {
+        return moderador.esMenorOIgualA200(texto);
     }
 }

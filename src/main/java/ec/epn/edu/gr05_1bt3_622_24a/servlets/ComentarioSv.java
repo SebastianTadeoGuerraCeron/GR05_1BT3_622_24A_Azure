@@ -48,10 +48,28 @@ public class ComentarioSv extends HttpServlet {
         Long resenaId = Long.parseLong(request.getParameter("resenaId"));
         String contenido = request.getParameter("contenido");
 
-        Resena resena = resenaController.findResena(resenaId);
-        Comentario comentario = comentarioService.crearComentario(contenido,usuario,resena);
+        Resena resena = resenaController.findResena(resenaId); // Recuperar la reseña
 
+        if (comentarioService.verificarContenidoOfensivo(contenido)) {
+            request.setAttribute("resena", resena); // Asegurar que la reseña esté disponible
+            request.setAttribute("comentarios", comentarioController.findComentariosByResena(resenaId)); // Incluir comentarios existentes
+            request.setAttribute("errorMessage", "La reseña contiene palabras ofensivas y no se ha publicado.");
+            request.getRequestDispatcher("ListaComentarios.jsp").forward(request, response);
+            return;
+        }
+
+        if (!comentarioService.verificarContenidoMax200(contenido)) {
+            request.setAttribute("resena", resena); // Asegurar que la reseña esté disponible
+            request.setAttribute("comentarios", comentarioController.findComentariosByResena(resenaId)); // Incluir comentarios existentes
+            request.setAttribute("errorLengthMessage", "La reseña excede los 200 caracteres y no se ha publicado.");
+            request.getRequestDispatcher("ListaComentarios.jsp").forward(request, response);
+            return;
+        }
+
+        // Crear y guardar el comentario si no hay problemas
+        Comentario comentario = comentarioService.crearComentario(contenido, usuario, resena);
         comentarioController.create(comentario);
         response.sendRedirect("ComentarioSv?resenaId=" + resenaId);
     }
+
 }

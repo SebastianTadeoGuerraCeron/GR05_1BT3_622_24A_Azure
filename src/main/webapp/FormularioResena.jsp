@@ -4,6 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Crear Nueva Reseña</title>
+  <script>
+    window.onload = function() {
+      // Verificar si existen mensajes de error y mostrarlos como alert
+      <%
+        String errorMessage = (String) request.getAttribute("errorMessage");
+        String errorLengthMessage = (String) request.getAttribute("errorLengthMessage");
+      %>
+      <% if (errorMessage != null) { %>
+      alert("<%= errorMessage %>");
+      <% } %>
+      <% if (errorLengthMessage != null) { %>
+      alert("<%= errorLengthMessage %>");
+      <% } %>
+    };
+  </script>
   <style>
     /* Importar Google Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');

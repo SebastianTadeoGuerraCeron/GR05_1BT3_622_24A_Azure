@@ -62,6 +62,18 @@ public class ResenaSv extends HttpServlet {
         String tipoComida = request.getParameter("tipoComida");
         String descripcion = request.getParameter("descripcion");
 
+        if (resenaService.verificarContenidoOfensivo(restaurante, descripcion)) {
+            request.setAttribute("errorMessage", "La reseña contiene palabras ofensivas y no se ha publicado.");
+            request.getRequestDispatcher("FormularioResena.jsp").forward(request, response);
+            return;
+        }
+
+        if (!resenaService.verificarContenidoMax200(restaurante, descripcion)) {
+            request.setAttribute("errorLengthMessage", "La reseña excede los 200 caracteres y no se ha publicado.");
+            request.getRequestDispatcher("FormularioResena.jsp").forward(request, response);
+            return;
+        }
+
         Resena resena = resenaService.crearResena(restaurante, tipoComida, descripcion, usuario);
 
         resenaController.create(resena);
