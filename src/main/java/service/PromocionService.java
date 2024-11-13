@@ -11,6 +11,8 @@ public class PromocionService {
 
     private static final ModeradorService moderador = new ModeradorService();
 
+
+    //refactorizacion de codigo
     public Promocion crearPromocion(String titulo, String nombreRestaurante, String ubicacion,
                                     String tipoPromocion, String condiciones, Usuario usuario) {
 
@@ -18,6 +20,11 @@ public class PromocionService {
             return null;
         }
 
+        return inicializarPromocion(titulo, nombreRestaurante, ubicacion, tipoPromocion, condiciones, usuario);
+    }
+
+    private Promocion inicializarPromocion(String titulo, String nombreRestaurante, String ubicacion,
+                                           String tipoPromocion, String condiciones, Usuario usuario) {
         Promocion promocion = new Promocion();
         promocion.setTitulo(titulo);
         promocion.setNombreRestaurante(nombreRestaurante);
@@ -28,6 +35,7 @@ public class PromocionService {
         promocion.setUsuario(usuario);
         return promocion;
     }
+
 
     private boolean camposInvalidos(String... campos) {
         for (String campo : campos) {
