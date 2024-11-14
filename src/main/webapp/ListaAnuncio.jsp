@@ -184,10 +184,10 @@
   <div class="sidebar">
     <!-- Formulario de filtros y búsqueda -->
     <form action="${pageContext.request.contextPath}/AnuncioSv" method="get" class="filter-form">
-      <label for="nombreRestauranteFilter" style="font-weight: bold; color: #553;">Filtrar por tipo de comida:</label>
+      <label for="nombreRestauranteFilter" style="font-weight: bold; color: #553;">Buscar por nombre de restaurante:</label>
       <input type="text" name="nombreRestaurante" id="nombreRestauranteFilter" placeholder="Ingresa el nombre de restaurante">
 
-      <label for="ubicacionFilter" style="font-weight: bold; color: #554;">Buscador por el nombre de restaurante:</label>
+      <label for="ubicacionFilter" style="font-weight: bold; color: #554;">Filtrar por ubicación de restaurante:</label>
       <select name="ubicacion" id="ubicacionFilter">
         <option value="Todas">Todas</option>
         <optgroup label="Zona Norte">
